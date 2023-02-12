@@ -1,0 +1,5 @@
+aaa,aaa:220;
+bbb,bbb:340;
+login,haslo:10;
+login1,haslo1:10;
+root,root:-165;
