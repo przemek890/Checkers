@@ -1,8 +1,7 @@
 #ifndef PROJEKT_IO_AI_H
 #define PROJEKT_IO_AI_H
 #include "LibrariesAndVariables.hpp"
-#include "Board.hpp"
-
+#include "Engine.h"
 class AI_ruch {
     int x1;
     int y1;

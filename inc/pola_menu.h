@@ -1,7 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include "LibrariesAndVariables.hpp"
 class pola_menu {
     sf::Texture p1;
 

@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include "Register.h"
 /// ---> silnik::Pozycjer:
 int silnik::Pozycjer::getter_x1() {return this->x1;}
 int silnik::Pozycjer::getter_x2() {return this->x2;}
@@ -630,6 +631,22 @@ void Wykonywacz_ruchu::wykonaj_ruch_2(silnik::Ruszer& ruszacz,sf::RenderWindow& 
     }
 }
 Wykonywacz_ruchu::Wykonywacz_ruchu() {;}
+
+/// ---> Ruch:
+Ruch::Ruch() {
+    // Poczatkowa inicjalizacja ruchu (wartosci dobrane tak by nie podswietlilo pola odrazu po rozpoczęciu partii)
+    this->x = 1;
+    this->y = 1;
+}
+Ruch::Ruch(int x, int y)  {
+    // Pobieranie pola na ktore wykonany zostal ruch
+    this->x = x;
+    this->y = y;
+}
+int Ruch::getter_x() {return this->x;}
+int Ruch::getter_y() {return this->y;}
+void Ruch::setter_x(int x) {this->x = x;}
+void Ruch::setter_y(int y) {this->y = y;}
 
 
 

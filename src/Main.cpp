@@ -1,16 +1,8 @@
-#include "Board.hpp"
-#include "Board.cpp"
-#include "Functions.cpp"
-#include "Game_loop.cpp"
-#include "Engine.cpp"
-#include "AI.cpp"
-#include "m_loop.h"
+#include "LibrariesAndVariables.hpp"
 #include "screen.h"
+#include "m_loop.h"
+#include "Game_loop.h"
 
-///komentować zamykanie okna z uzyciem sfmla w Mac Os'ie, w pliku m_loop.cpp
-//if(event.type == Event::Closed){
-//return -1;
-//}
 
 int main() {
 

@@ -6,7 +6,7 @@ project(WARCABY)
 set(HEADERS_DIRECTORY "./inc")
 include_directories(${HEADERS_DIRECTORY})
 
-add_executable(WARCABY src/Main.cpp src/m_loop.cpp src/font_menu.cpp src/pola_menu.cpp src/tekst_menu.cpp src/txt_menu.cpp src/screen.cpp src/AI_gracz.cpp src/Register.cpp)
+add_executable(WARCABY src/Main.cpp src/m_loop.cpp src/font_menu.cpp src/pola_menu.cpp src/tekst_menu.cpp src/txt_menu.cpp src/screen.cpp src/AI_gracz.cpp src/Register.cpp inc/Eng_boa.h src/Eng_boa.cpp src/AI.cpp src/Board.cpp src/Engine.cpp src/Functions.cpp src/Game_loop.cpp)
 
 set(SFML_STATIC_LIBRARIES FALSE) # TRUE
 

@@ -1,4 +1,12 @@
 #include "m_loop.h"
+#include "LibrariesAndVariables.hpp"
+#include "txt_menu.h"
+#include "tekst_menu.h"
+#include "pola_menu.h"
+#include "Register.h"
+#include "font_menu.h"
+#include "Board.hpp"
+
 
 
 

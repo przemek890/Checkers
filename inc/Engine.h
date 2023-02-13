@@ -2,9 +2,17 @@
 #define PROJEKT_IO_ENGINE_H
 //-------------------------
 #include "LibrariesAndVariables.hpp"
-#include "Board.hpp"
-#include "Register.h"
-class Ruch;
+class Ruch {
+    int x;
+    int y;
+public:
+    Ruch();
+    Ruch(int x, int y);
+    void setter_x(int x);
+    void setter_y(int y);
+    int getter_x();
+    int getter_y();
+};
 //---------------------------------
 namespace silnik {
     class Pozycjer {
@@ -90,5 +98,4 @@ public:
     void wykonaj_ruch_2(silnik::Ruszer& ruszacz,sf::RenderWindow& window,Ruch& aktualny_ruch,silnik::Inicjalizator_pol& engine,silnik::Pozycjer& pozycja,int& licznik,silnik::Obligator_bic& bicia_obowiazkowe,int& poprawnosc_ruchu,int& poprawnosc_ruchu_2);
     Wykonywacz_ruchu();
 };
-
 #endif //PROJEKT_IO_ENGINE_H

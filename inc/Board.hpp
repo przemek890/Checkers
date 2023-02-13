@@ -1,11 +1,9 @@
 #ifndef PROJEKT_IO_Class_H
 #define PROJEKT_IO_Class_H
 #include "LibrariesAndVariables.hpp"
-#include "Engine.h"
 class Plansza;
 class Inicjalizator_tekstur;
 class Wyswietlacz_pol;
-class Ruch;
 class Atrybuty;
 // Konstruktory i metody zaprzyjaźnione umieszczamy na samym początku, zaraz po atrybutach!
 //-----------------------------------
@@ -38,21 +36,6 @@ public:
     bool getter_m_r();
     short int getter_m();
     short int getter_k_p();
-};
-
-
-
-
-class Ruch {
-    int x;
-    int y;
-public:
-    Ruch();
-    Ruch(int x, int y);
-    void setter_x(int x);
-    void setter_y(int y);
-    int getter_x();
-    int getter_y();
 };
 
 class Inicjator_fontow {
@@ -102,12 +85,7 @@ class Gra_na_czas {
         Gra_na_czas();
 };
 
-class Wyswietlacz_pol {
-public:
-    Wyswietlacz_pol();
-    void wyswietl_pola(silnik::Inicjalizator_pol& engine, Inicjalizator_tekstur &textury, sf::RenderWindow &window,Ruch &aktualny_ruch, int& licznik);
-    void wyswietl_tlo(sf::RenderWindow &window);
-};
+
 class Reklamer {
     sf::Texture reklama_1;
     sf::Texture reklama_2;
@@ -128,18 +106,7 @@ public:
     void odswierz_zegar(sf::RenderWindow &window,Inicjator_fontow& font);
     Timer();
 };
-class Asseter{
-    list<silnik::Pozycjer> lista; // struktura danych do przetrzymywania 10 ostatnio wykonanych ruchow
-    list<int> lista_pom; // Jezeli 1 to gracz nr_1// Jezeli 2to gracz numer 2
-public:
-    void drukuj_przewage(sf::RenderWindow& window,silnik::Inicjalizator_pol& engine_1,Inicjator_fontow& font);
-    void kogo_tura(sf::RenderWindow& window,int& licznik);
-    void chat(sf::RenderWindow& window,silnik::Pozycjer& pozycja,Inicjator_fontow& font,int& poprawnosc_ruchu,int& pozycja_licz);
-    int exit(sf::RenderWindow& window);
 
-    list<silnik::Pozycjer> getter_1();
-    list<int> getter_2();
-};
 
 
 

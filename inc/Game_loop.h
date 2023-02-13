@@ -1,8 +1,6 @@
 #ifndef PROJEKT_IO_GAME_LOOP_H
 #define PROJEKT_IO_GAME_LOOP_H
 #include "LibrariesAndVariables.hpp"
-#include "Board.hpp"
-#include "AI.h"
 #include "screen.h"
 
 //---

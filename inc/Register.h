@@ -1,6 +1,5 @@
 #ifndef PROJEKT_IO_REGISTER_H
 #define PROJEKT_IO_REGISTER_H
-#include "LibrariesAndVariables.hpp"
 #include <string>
 
 

@@ -1,4 +1,8 @@
 #include "Game_loop.h"
+#include "Engine.h"
+#include "Register.h"
+#include "AI.h"
+#include "Eng_boa.h"
 //--------------------
 Plansza::Plansza() {}
 

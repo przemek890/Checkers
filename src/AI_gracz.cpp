@@ -1,7 +1,6 @@
 #include "AI.h"
 #include "AI_wagi.h"
 
-
 /// ---> AI_gracz:
 void AI_gracz::pobierz_ruchy_dla_pionka(silnik::Inicjalizator_pol& engine,AI_list& lista,int i, int j) {
     int a = silnik::Sprawdzacz_ruchu_pionka::czy_dozwolone_pionek(i,j,i-1,j+1,engine); // Jezeli ruch w prawo

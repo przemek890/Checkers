@@ -1,8 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include "LibrariesAndvariables.hpp"
-
 
 class txt_menu{
     sf::Texture tl;

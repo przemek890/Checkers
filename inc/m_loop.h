@@ -1,14 +1,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-
-#include "Board.hpp"
-#include "txt_menu.h"
-#include "pola_menu.h"
-#include "font_menu.h"
-#include "tekst_menu.h"
 #include "screen.h"
-#include "Register.h"
+
 
 using namespace std;
 using namespace sf;
