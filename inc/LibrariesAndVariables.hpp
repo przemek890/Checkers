@@ -9,7 +9,7 @@
 #include <limits>
 #include <algorithm>
 #include <tuple>
-#include <unistd.h> // jak nie dziala to zmienic na <windows.h> (tylko sleep dac wartosc nie 1 tylko 1000) --> ale chyba nie ma nawet tego bo debouncing jest zamiast
+#include <unistd.h> 
 #include <SFML/Graphics.hpp>
 using namespace std;
 #ifdef _WIN32
