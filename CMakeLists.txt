@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.21)
 set(CMAKE_CXX_STANDARD 14)
 
+set(CMAKE_PREFIX_PATH ./)
+
 get_filename_component(PROJECT_ROOT_DIR ${CMAKE_SOURCE_DIR} DIRECTORY)
 set(PROJECT_ROOT_DIR "CHECKERS")
 project(${PROJECT_ROOT_DIR})
