@@ -12,7 +12,7 @@ int GLOBALpoint = 0;
 bool User::logowanie(User& user,string log, string pass) {
 
     // Otwieramy plik
-   std::ifstream in("../txt/USERS.txt",ios::in);
+   std::ifstream in(MY_DEFINE "../txt/USERS.txt",ios::in);
 
     while (!in.eof()) {
         // Odczytujemy linię z danymi użytkownika
@@ -50,7 +50,7 @@ bool User::rejestracja(User& newUser,string login, string haslo) {
     int point=0;
     //sprawdzamy czy uzytkownik o takich danych istnieje
     // Otwieramy plik
-    std::ifstream in("../txt/USERS.txt",ios::in);
+    std::ifstream in(MY_DEFINE "../txt/USERS.txt",ios::in);
     while (!in.eof()) {
         // Odczytujemy linię z danymi użytkownika
         string line;
@@ -70,7 +70,7 @@ bool User::rejestracja(User& newUser,string login, string haslo) {
     }
 
     // Otwieramy plik
-    ofstream out("../txt/USERS.txt", ios::out|ios::app);
+    ofstream out(MY_DEFINE "../txt/USERS.txt", ios::out|ios::app);
     // Zapisujemy dane użytkownika do pliku
     out << login << "," << haslo << ":" << point << ";" << endl;
     out.close();
@@ -82,7 +82,7 @@ bool User::rejestracja(User& newUser,string login, string haslo) {
 
 bool User::ZmianaPasow(User& user,string login, string haslo) {
 
-    ifstream plik("../txt/USERS.txt",ios::in);
+    ifstream plik(MY_DEFINE "../txt/USERS.txt",ios::in);
 
     // Odczytanie całego pliku do wektora linii
     vector<string> ZawBazy;
@@ -106,10 +106,10 @@ bool User::ZmianaPasow(User& user,string login, string haslo) {
         }
     }
 
-    remove("../txt/USERS.txt");
+    remove(MY_DEFINE "../txt/USERS.txt");
 
     // Otwieranie nowego pliku w trybie zapisu
-    ofstream nowy_plik("../txt/USERS.txt",ios::out);
+    ofstream nowy_plik(MY_DEFINE "../txt/USERS.txt",ios::out);
 
     // Zapisanie pozostałych linii do nowego pliku
     for (const string& l : ZawBazy) {
@@ -119,7 +119,7 @@ bool User::ZmianaPasow(User& user,string login, string haslo) {
 
     //jesli uzytkownik o takim loginie istnieje to odrzucamy zmiane i pozostaje takie samo haslo oraz login
     bool pom= true;
-    std::ifstream in("../txt/USERS.txt",ios::in);
+    std::ifstream in(MY_DEFINE "../txt/USERS.txt",ios::in);
     while (!in.eof()) {
         // Odczytujemy linię z danymi użytkownika
         string line;
@@ -138,7 +138,7 @@ bool User::ZmianaPasow(User& user,string login, string haslo) {
     pom ? (GLOBALogin = login):(login=GLOBALogin);
     pom ? (GLOBALpassword = haslo):(haslo=GLOBALpassword);
     // Otwieramy plik
-    ofstream out("../txt/USERS.txt", ios::out|ios::app);
+    ofstream out(MY_DEFINE "../txt/USERS.txt", ios::out|ios::app);
     // Zapisujemy dane użytkownika do pliku
     out << login << "," << haslo << ":" << newPoints << ";" << endl;
     out.close();
@@ -149,7 +149,7 @@ bool User::ZmianaPasow(User& user,string login, string haslo) {
 //zliczanie punktow
 void User::Punkty( int wynik) {
 
-    ifstream plik("../txt/USERS.txt",ios::in);
+    ifstream plik(MY_DEFINE "../txt/USERS.txt",ios::in);
     // Odczytanie całego pliku do wektora linii
     vector<string> ZawBazy;
     string linia;
@@ -169,10 +169,10 @@ void User::Punkty( int wynik) {
         }
     }
 
-    remove("../txt/USERS.txt");
+    remove(MY_DEFINE "../txt/USERS.txt");
 
     // Otwieranie nowego pliku w trybie zapisu
-    ofstream nowy_plik("../txt/USERS.txt",ios::out);
+    ofstream nowy_plik(MY_DEFINE "../txt/USERS.txt",ios::out);
 
     // Zapisanie pozostałych linii do nowego pliku
     for (const string& l : ZawBazy) {
@@ -187,7 +187,7 @@ void User::Punkty( int wynik) {
 
     GLOBALpoint=newPoints;
     // Otwieramy plik
-    ofstream out("../txt/USERS.txt", ios::out|ios::app);
+    ofstream out(MY_DEFINE "../txt/USERS.txt", ios::out|ios::app);
     // Zapisujemy dane użytkownika do pliku
     out << GLOBALogin << "," << GLOBALpassword << ":" << GLOBALpoint << ";" << endl;
     out.close();
@@ -203,7 +203,7 @@ vector<User> User::WypiszTop5() {
 
     vector <User> uzyt;
 
-    ifstream file("../txt/USERS.txt",ios::out);
+    ifstream file(MY_DEFINE "../txt/USERS.txt",ios::out);
     string line;
     while (getline(file, line)) {
 
@@ -243,30 +243,30 @@ bool exists( string s ) {
 }
 
 void last_5_game(){
-    if(exists("../txt/a6.txt")){
-        remove("../txt/a1.txt");
-        rename("../txt/a2.txt","../txt/a1.txt"); //stara nazwa, nowa nazwa
-        rename("../txt/a3.txt","../txt/a2.txt");
-        rename("../txt/a4.txt","../txt/a3.txt");
-        rename("../txt/a5.txt","../txt/a4.txt");
-        rename("../txt/a6.txt","../txt/a5.txt");
+    if(exists(MY_DEFINE "../txt/a6.txt")){
+        remove(MY_DEFINE "../txt/a1.txt");
+        rename(MY_DEFINE "../txt/a2.txt",MY_DEFINE "../txt/a1.txt"); //stara nazwa, nowa nazwa
+        rename(MY_DEFINE "../txt/a3.txt",MY_DEFINE "../txt/a2.txt");
+        rename(MY_DEFINE "../txt/a4.txt",MY_DEFINE "../txt/a3.txt");
+        rename(MY_DEFINE "../txt/a5.txt",MY_DEFINE "../txt/a4.txt");
+        rename(MY_DEFINE "../txt/a6.txt",MY_DEFINE "../txt/a5.txt");
     }
 
 }
 
 void change_filename(){//do testu
 
-  if(!exists("../txt/a1.txt")) rename("../txt/test1.txt","../txt/a1.txt");
+  if(!exists(MY_DEFINE "../txt/a1.txt")) rename(MY_DEFINE "../txt/test1.txt",MY_DEFINE "../txt/a1.txt");
   else {
-      if (!exists("../txt/a2.txt")) rename("../txt/test1.txt", "../txt/a2.txt");
+      if (!exists(MY_DEFINE "../txt/a2.txt")) rename(MY_DEFINE "../txt/test1.txt", MY_DEFINE "../txt/a2.txt");
       else{
-          if (!exists("../txt/a3.txt")) rename("../txt/test1.txt", "../txt/a3.txt");
+          if (!exists(MY_DEFINE "../txt/a3.txt")) rename(MY_DEFINE "../txt/test1.txt", MY_DEFINE "../txt/a3.txt");
           else{
-              if (!exists("../txt/a4.txt")) rename("../txt/test1.txt", "../txt/a4.txt");
+              if (!exists(MY_DEFINE "../txt/a4.txt")) rename(MY_DEFINE "../txt/test1.txt", MY_DEFINE "../txt/a4.txt");
               else{
-                  if (!exists("../txt/a5.txt")) rename("../txt/test1.txt", "../txt/a5.txt");
+                  if (!exists(MY_DEFINE "../txt/a5.txt")) rename(MY_DEFINE "../txt/test1.txt", MY_DEFINE "../txt/a5.txt");
                   else{
-                      if (!exists("../txt/a6.txt")) rename("../txt/test1.txt", "../txt/a6.txt");
+                      if (!exists(MY_DEFINE "../txt/a6.txt")) rename(MY_DEFINE "../txt/test1.txt", MY_DEFINE "../txt/a6.txt");
                   }
               }
           }
@@ -274,7 +274,7 @@ void change_filename(){//do testu
 
       }
   }
-    remove("../txt/test1.txt");
+    remove(MY_DEFINE "../txt/test1.txt");
 }
 
 
@@ -283,7 +283,7 @@ void Oneline(string a){ //linijka do dodania
 
 
     //dodanie linii
-    ofstream nowy_plik("../txt/test1.txt",ios::out|ios::app);
+    ofstream nowy_plik(MY_DEFINE "../txt/test1.txt",ios::out|ios::app);
 
     nowy_plik << a << endl;
 

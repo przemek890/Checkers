@@ -1,8 +1,9 @@
 #include "txt_menu.h"
+#include "LibrariesAndVariables.hpp"
 
 txt_menu::txt_menu(){
-    this->tl.loadFromFile("../data/mp.as/tlo2.png");
-    this->op_tl.loadFromFile("../data/mp.as/tlo3.png");
+    this->tl.loadFromFile(MY_DEFINE "../data/mp.as/tlo2.png");
+    this->op_tl.loadFromFile(MY_DEFINE "../data/mp.as/tlo3.png");
 }
 
 sf::Sprite& txt_menu:: g_tl(){

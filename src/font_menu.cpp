@@ -1,8 +1,10 @@
 #include "font_menu.h"
+#include "unistd.h"
+#include "LibrariesAndVariables.hpp"
 
 font_menu::font_menu() {
     /// Ustawianie fontu
-    if (!this->font.loadFromFile("../fonts/Manrope-Bold.ttf")) {
+    if (!this->font.loadFromFile(MY_DEFINE "../fonts/Manrope-Bold.ttf")) {
         std::cout << "Blad wczytywania czcionki!" << std::endl;
         exit(0);
     }

@@ -1,24 +1,25 @@
 #include "pola_menu.h"
+#include "LibrariesAndVariables.hpp"
 
 pola_menu::pola_menu() {
-    this->p1.loadFromFile("../data/mp.as/przycisk1.png");
-    this->p2.loadFromFile("../data/mp.as/pionki.png");
-    this->lgw.loadFromFile("../data/mp.as/lgw.png");
-    this->lg.loadFromFile("../data/mp.as/lg1.png");
+    this->p1.loadFromFile(MY_DEFINE "../data/mp.as/przycisk1.png");
+    this->p2.loadFromFile(MY_DEFINE "../data/mp.as/pionki.png");
+    this->lgw.loadFromFile(MY_DEFINE "../data/mp.as/lgw.png");
+    this->lg.loadFromFile(MY_DEFINE "../data/mp.as/lg1.png");
 
-    this->pionl.loadFromFile("../data/mp.as/pionl.png");
-    this->pionb.loadFromFile("../data/mp.as/pionb.png");
-    this->boardl.loadFromFile("../data/mp.as/szachbraz.png");
-    this->boardb.loadFromFile("../data/mp.as/szachblack.png");
+    this->pionl.loadFromFile(MY_DEFINE "../data/mp.as/pionl.png");
+    this->pionb.loadFromFile(MY_DEFINE "../data/mp.as/pionb.png");
+    this->boardl.loadFromFile(MY_DEFINE "../data/mp.as/szachbraz.png");
+    this->boardb.loadFromFile(MY_DEFINE "../data/mp.as/szachblack.png");
 
-    this->pod1.loadFromFile("../data/mp.as/2.png");
-    this->pod2.loadFromFile("../data/mp.as/3.png");
-    this->pod3.loadFromFile("../data/mp.as/4.png");
+    this->pod1.loadFromFile(MY_DEFINE "../data/mp.as/2.png");
+    this->pod2.loadFromFile(MY_DEFINE "../data/mp.as/3.png");
+    this->pod3.loadFromFile(MY_DEFINE "../data/mp.as/4.png");
 
-    this->login.loadFromFile("../data/mp.as/dop.png");
-    this->sa.loadFromFile("../data/mp.as/sa2.png");
+    this->login.loadFromFile(MY_DEFINE "../data/mp.as/dop.png");
+    this->sa.loadFromFile(MY_DEFINE "../data/mp.as/sa2.png");
 
-    this->arch.loadFromFile("../data/mp.as/archiwum.png");
+    this->arch.loadFromFile(MY_DEFINE "../data/mp.as/archiwum.png");
 }
 
 sf::Texture& pola_menu::g_p1() { return this->p1;}

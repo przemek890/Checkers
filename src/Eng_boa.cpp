@@ -16,7 +16,7 @@ void Asseter::drukuj_przewage(sf::RenderWindow& window,silnik::Inicjalizator_pol
     if(resolution_mode == 2) asset_1.setScale(0.5,0.5);
 
     sf::Texture tx;
-    tx.loadFromFile("../data/assets/asset_1.png");
+    tx.loadFromFile(MY_DEFINE "../data/assets/asset_1.png");
     asset_1.setTexture(tx);
     asset_1.setPosition(1435 / resolution_mode , 250 / resolution_mode);
     window.draw(asset_1);
@@ -52,8 +52,8 @@ void Asseter::kogo_tura(sf::RenderWindow& window,int& licznik) {
     /// Drukowanie informacji (w oknie gry) kogo obecnie jest tura
     sf::Sprite tura;
     sf::Texture textt;
-    if (licznik == 0 || licznik == 1) textt.loadFromFile("../data/assets/tura_1.png");
-    else if (licznik == 2 || licznik == 3) textt.loadFromFile("../data/assets/tura_2.png");
+    if (licznik == 0 || licznik == 1) textt.loadFromFile(MY_DEFINE "../data/assets/tura_1.png");
+    else if (licznik == 2 || licznik == 3) textt.loadFromFile(MY_DEFINE "../data/assets/tura_2.png");
 
     if(resolution_mode == 2) tura.setScale(0.5,0.5);
 
@@ -67,7 +67,7 @@ void Asseter::chat(sf::RenderWindow& window,silnik::Pozycjer& pozycja,Inicjator_
     /// Obsluga chatu --> 10 ostatnio wykonanych ruchow
     sf::Text chat;
     sf::Font fira;
-    fira.loadFromFile("../fonts/fira.ttf");
+    fira.loadFromFile(MY_DEFINE "../fonts/fira.ttf");
     chat.setFont(fira);
     chat.setString("CHAT");
     chat.setCharacterSize(60 / resolution_mode);
@@ -169,7 +169,7 @@ int Asseter::exit(sf::RenderWindow& window) {
     sf::Sprite exit_button;
     sf::Texture textt;
 
-    textt.loadFromFile("../data/assets/exit.png");
+    textt.loadFromFile(MY_DEFINE "../data/assets/exit.png");
     exit_button.setTexture(textt);
     if(resolution_mode == 2) exit_button.setScale(0.5,0.5);
     int x = 1590 / resolution_mode;
@@ -254,7 +254,7 @@ void Wyswietlacz_pol::wyswietl_tlo(sf::RenderWindow &window) {
     /// Drukowanie na ekranie tła
     //------------------------------------------------------
     sf::Texture tlo;
-    tlo.loadFromFile("../data/tlo.png");
+    tlo.loadFromFile(MY_DEFINE "../data/tlo.png");
     sf::Sprite tloo;
     tloo.setTexture(tlo);
 

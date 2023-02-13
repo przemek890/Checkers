@@ -1151,7 +1151,7 @@ int a1::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
+    font1.loadFromFile(MY_DEFINE "../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1160,10 +1160,10 @@ int a1::Run(sf::RenderWindow &Wind) {
     //wyswietl archiwum
     int pom=0;
     string x,y,z,x1,y1,z1;
-    vector<string> a = Display_File("../txt/a1.txt");
+    vector<string> a = Display_File(MY_DEFINE "../txt/a1.txt");
     int n=a.size();
     pom_f(x,y,z,x1,y1,z1,pom,a);
-    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
+    sf::Font ff; ff.loadFromFile(MY_DEFINE "../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
     ruch1.setFont(ff);
@@ -1250,7 +1250,7 @@ int a2::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
+    font1.loadFromFile(MY_DEFINE "../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1259,10 +1259,10 @@ int a2::Run(sf::RenderWindow &Wind) {
     //wyswietl archiwum
     int pom=0;
     string x,y,z,x1,y1,z1;
-    vector<string> a = Display_File("../txt/a2.txt");
+    vector<string> a = Display_File(MY_DEFINE "../txt/a2.txt");
     int n=a.size();
     pom_f(x,y,z,x1,y1,z1,pom,a);
-    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
+    sf::Font ff; ff.loadFromFile(MY_DEFINE "../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
     ruch1.setFont(ff);
@@ -1348,7 +1348,7 @@ int a3::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
+    font1.loadFromFile(MY_DEFINE "../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1357,10 +1357,10 @@ int a3::Run(sf::RenderWindow &Wind) {
     //wyswietl archiwum
     int pom=0;
     string x,y,z,x1,y1,z1;
-    vector<string> a = Display_File("../txt/a3.txt");
+    vector<string> a = Display_File(MY_DEFINE "../txt/a3.txt");
     int n=a.size();
     pom_f(x,y,z,x1,y1,z1,pom,a);
-    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
+    sf::Font ff; ff.loadFromFile(MY_DEFINE "../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
     ruch1.setFont(ff);
@@ -1446,7 +1446,7 @@ int a4::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
+    font1.loadFromFile(MY_DEFINE "../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1455,10 +1455,10 @@ int a4::Run(sf::RenderWindow &Wind) {
     //wyswietl archiwum
     int pom=0;
     string x,y,z,x1,y1,z1;
-    vector<string> a = Display_File("../txt/a4.txt");
+    vector<string> a = Display_File(MY_DEFINE "../txt/a4.txt");
     int n=a.size();
     pom_f(x,y,z,x1,y1,z1,pom,a);
-    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
+    sf::Font ff; ff.loadFromFile(MY_DEFINE "../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
     ruch1.setFont(ff);
@@ -1544,7 +1544,7 @@ int a5::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
+    font1.loadFromFile(MY_DEFINE "../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1554,12 +1554,12 @@ int a5::Run(sf::RenderWindow &Wind) {
     ///
 
     ///
-    vector<string> a = Display_File("../txt/a5.txt");
+    vector<string> a = Display_File(MY_DEFINE "../txt/a5.txt");
     int pom=0;
     string x,y,z,x1,y1,z1;
     int n=a.size();
     pom_f(x,y,z,x1,y1,z1,pom,a);
-    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
+    sf::Font ff; ff.loadFromFile(MY_DEFINE "../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
     ruch1.setFont(ff);

@@ -411,11 +411,11 @@ int silnik::Zakonczer_rozgrywki::sprawdz_czy_koniec(Inicjalizator_pol& engine_1,
         sf::Sprite pole_wynikowe;
         sf::Texture text;
         if(zakleszczenie_1 == 0 || czas_1 == 0) // wygral gracz 2
-            text.loadFromFile("../data/win/win_2.png");
+            text.loadFromFile(MY_DEFINE "../data/win/win_2.png");
         else if (remis == 0)    // remis (15 ruchow bez bicia)
-            text.loadFromFile("../data/win/remis.png");
+            text.loadFromFile(MY_DEFINE "../data/win/remis.png");
         else // wygral gracz 1
-            text.loadFromFile("../data/win/win_1.png");
+            text.loadFromFile(MY_DEFINE "../data/win/win_1.png");
 
         pole_wynikowe.setTexture(text);
 

@@ -9,7 +9,7 @@ int OdczytModel() {
 
     // Otwieramy plik
 
-    std::ifstream in("../txt/Atrybuty.txt",ios::out);
+    std::ifstream in(MY_DEFINE"../txt/Atrybuty.txt",ios::out);
     while (!in.eof()) {
 
         string line;
@@ -27,7 +27,7 @@ int OdczytModel() {
 int OdczytKolor() {
 
     // Otwieramy plik
-    ifstream in("../txt/Atrybuty.txt");
+    ifstream in(MY_DEFINE"../txt/Atrybuty.txt");
     while (!in.eof()) {
 
         string line;
@@ -48,7 +48,7 @@ int OdczytKolor() {
 int OdczytMotyw() {
 
     // Otwieramy plik
-    ifstream in("../txt/Atrybuty.txt");
+    ifstream in(MY_DEFINE"../txt/Atrybuty.txt");
     while (!in.eof()) {
 
         string line;
@@ -76,7 +76,7 @@ Atrybuty::Atrybuty(bool model, Motyw kol, Motyw mot) {
     this->kolor_pionkow = kol;
 
     // Otwieramy plik
-    ofstream out("../txt/Atrybuty.txt", ios::trunc);
+    ofstream out(MY_DEFINE"../txt/Atrybuty.txt", ios::trunc);
     // Zapisujemy dane użytkownika do pliku
     out << model << "," << kol << ":" << mot << ";" << endl;
     out.close();
@@ -106,7 +106,7 @@ Atrybuty Builder::build(){
 /// ---> Inicjator_fontow
 Inicjator_fontow::Inicjator_fontow() {
     /// Ustawianie fontu
-    if (!this->font.loadFromFile("../fonts/manrope.ttf")) {
+    if (!this->font.loadFromFile(MY_DEFINE"../fonts/manrope.ttf")) {
         cout << "Blad wczytywania czcionki!" << endl;
         exit(0);
     }
@@ -129,21 +129,21 @@ sf::Text& Inicjator_tekstu::getter() {return this->text;}
 Inicjalizator_tekstur::Inicjalizator_tekstur(Atrybuty& atrybuty,sf::Text& text,sf::RenderWindow& window) {
     /// Ustawianie tekstur Pionków
     if (atrybuty.getter_k_p() == 0) {
-        this->pionek_2.loadFromFile("../data/pawn_1/black_pawn.png");
-        this->pionek_2_queen.loadFromFile("../data/pawn_1/black_queen.png");
-        this->pionek_1.loadFromFile("../data/pawn_1/white_pawn.png");
-        this->pionek_1_queen.loadFromFile("../data/pawn_1/white_queen.png");
+        this->pionek_2.loadFromFile(MY_DEFINE"../data/pawn_1/black_pawn.png");
+        this->pionek_2_queen.loadFromFile(MY_DEFINE"../data/pawn_1/black_queen.png");
+        this->pionek_1.loadFromFile(MY_DEFINE"../data/pawn_1/white_pawn.png");
+        this->pionek_1_queen.loadFromFile(MY_DEFINE"../data/pawn_1/white_queen.png");
     } else if (atrybuty.getter_k_p()== 1) {
-        this->pionek_1.loadFromFile("../data/pawn_2/beige_pawn.png");
-        this->pionek_1_queen.loadFromFile("../data/pawn_2/beige_queen.png");
-        this->pionek_2.loadFromFile("../data/pawn_2/brown_pawn.png");
-        this->pionek_2_queen.loadFromFile("../data/pawn_2/brown_queen.png");
+        this->pionek_1.loadFromFile(MY_DEFINE"../data/pawn_2/beige_pawn.png");
+        this->pionek_1_queen.loadFromFile(MY_DEFINE"../data/pawn_2/beige_queen.png");
+        this->pionek_2.loadFromFile(MY_DEFINE"../data/pawn_2/brown_pawn.png");
+        this->pionek_2_queen.loadFromFile(MY_DEFINE"../data/pawn_2/brown_queen.png");
     } else {
         window.draw(text);  // Informacja o wystąpieniu błędu
     }
 
-    this->puste_pole.loadFromFile("../data/puste_pole.png");
-    this->podswietl.loadFromFile("../data/podswietlenie.png");
+    this->puste_pole.loadFromFile(MY_DEFINE"../data/puste_pole.png");
+    this->podswietl.loadFromFile(MY_DEFINE"../data/podswietlenie.png");
 }
 sf::Texture& Inicjalizator_tekstur::getter_p() {return this->podswietl;}
 sf::Texture& Inicjalizator_tekstur::getter_p_1() {return this->pionek_1;}
@@ -157,11 +157,11 @@ Inicjator_planszy::Inicjator_planszy(Atrybuty& atrybuty, sf::Text& text,sf::Rend
     /// Ładowanie tekstury planszy
     switch (atrybuty.getter_m()) {
         case 0: {
-            this->plansza_tex.loadFromFile("../data/plansza_1.png");
+            this->plansza_tex.loadFromFile(MY_DEFINE"../data/plansza_1.png");
             break;
         }
         case 1: {
-            this->plansza_tex.loadFromFile("../data/plansza_2.png");
+            this->plansza_tex.loadFromFile(MY_DEFINE"../data/plansza_2.png");
             break;
         }
         default: {
@@ -263,9 +263,9 @@ void Reklamer::wyswietl_reklame(sf::RenderWindow& window) {
     /// ładuje reklamy do bufora i je wyswietla
     static int licznik; // jezeli licznik osiagnie okreslona wartosc --> zmiana reklamy lub wyzerowanie licznika
 
-    this->reklama_1.loadFromFile("../data/ads/reklama_1.png");
-    this->reklama_2.loadFromFile("../data/ads/reklama_2.png");
-    this->reklama_3.loadFromFile("../data/ads/reklama_3.png");
+    this->reklama_1.loadFromFile(MY_DEFINE"../data/ads/reklama_1.png");
+    this->reklama_2.loadFromFile(MY_DEFINE"../data/ads/reklama_2.png");
+    this->reklama_3.loadFromFile(MY_DEFINE"../data/ads/reklama_3.png");
     sf::Sprite sp1, sp2, sp3;
     sp1.setTexture(reklama_1);
     sp2.setTexture(reklama_2);
@@ -297,7 +297,7 @@ void Timer::inicjuj_timer(sf::RenderWindow& window) {
     this->czas_gry_h = 0;
 
     sf::Sprite zeg;
-    this->zegarek.loadFromFile("../data/accesories/zegar.png");
+    this->zegarek.loadFromFile(MY_DEFINE"../data/accesories/zegar.png");
     zeg.setTexture(zegarek);
     zeg.setPosition(1430 / resolution_mode,43 / resolution_mode);
     if(resolution_mode == 2) zeg.setScale(0.5,0.5);
