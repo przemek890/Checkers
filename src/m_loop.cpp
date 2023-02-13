@@ -98,9 +98,7 @@ int m_loop::Run(RenderWindow &Wind) {
         if(pmenu1.what_if(p3, Wind)){ //napisy
             return 2;
         }
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
+
         if(pmenu1.what_if(p4, Wind)) exit(0); //wyjdz
 
         Wind.display();
@@ -203,9 +201,6 @@ int options::Run(sf::RenderWindow &Wind) {
 
         if(pmenu1.what_if(lg2, Wind)){
             return 0;
-        }
-        if (event.type == sf::Event::Closed) {
-            return -1;
         }
         Wind.display();
     }
@@ -338,9 +333,6 @@ int account::Run(sf::RenderWindow &Wind) {
 
         if(pmenu1.what_if(p1, Wind)){
             return 3;
-        }
-        if (event.type == sf::Event::Closed) {
-            return -1;
         }
 
         millis++;
@@ -525,10 +517,6 @@ int opcje_loop:: Run(RenderWindow &Wind){
              return 3;
         }
 
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
-
         Wind.display();
     }
     return 0;
@@ -595,10 +583,6 @@ int credits::Run(sf::RenderWindow &Wind) {
 
         if(pmenu1.what_if(p3, Wind)){
             return 0;
-        }
-
-        if (event.type == sf::Event::Closed) {
-            return -1;
         }
 
         Wind.display();
@@ -753,10 +737,6 @@ int firstscreen::Run(sf::RenderWindow &Wind) {
             return 7;
         }
 
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
-
         millis++;
         Wind.display();
     }
@@ -892,11 +872,6 @@ int new_account::Run(sf::RenderWindow &Wind) {
             return 0;
         }
 
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
-
-
         millis++;
         Wind.display();
     }
@@ -1026,10 +1001,6 @@ int ranking::Run(sf::RenderWindow &Wind) {
             return 3;
         }
 
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
-
         Wind.display();
     }
 }
@@ -1149,10 +1120,6 @@ int arch::Run(sf::RenderWindow &Wind) {
 
         if(pmenu1.what_if(p3, Wind)){
             return 3;
-        }
-
-        if (event.type == sf::Event::Closed) {
-            return -1;
         }
 
         Wind.display();
@@ -1327,10 +1294,6 @@ int a1::Run(sf::RenderWindow &Wind) {
         if(z1.size()>0) Wind.draw(ruch6);
 
         //interakcje
-
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
 
         if(pmenu1.what_if(p3, Wind)){
             return 9;
@@ -1507,11 +1470,6 @@ int a2::Run(sf::RenderWindow &Wind) {
         if(z1.size()>0) Wind.draw(ruch6);
 
         //interakcje
-
-
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
 
         if(pmenu1.what_if(p3, Wind)){
             return 9;
@@ -1692,10 +1650,6 @@ int a3::Run(sf::RenderWindow &Wind) {
 
         //interakcje
 
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
-
         if(pmenu1.what_if(p3, Wind)){
             return 9;
         }
@@ -1875,10 +1829,6 @@ int a4::Run(sf::RenderWindow &Wind) {
             return 9;
         }
 
-        if (event.type == sf::Event::Closed) {
-            return -1;
-        }
-
         Wind.display();
     }
 }
@@ -2054,10 +2004,6 @@ int a5::Run(sf::RenderWindow &Wind) {
 
         if(pmenu1.what_if(p3, Wind)){
             return 9;
-        }
-
-        if (event.type == sf::Event::Closed) {
-            return -1;
         }
 
         Wind.display();
