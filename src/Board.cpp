@@ -106,7 +106,7 @@ Atrybuty Builder::build(){
 /// ---> Inicjator_fontow
 Inicjator_fontow::Inicjator_fontow() {
     /// Ustawianie fontu
-    if (!this->font.loadFromFile(MY_DEFINE"../fonts/manrope.ttf")) {
+    if (!this->font.loadFromFile(MY_DEFINE"../font/manrope.ttf")) {
         cout << "Blad wczytywania czcionki!" << endl;
         exit(0);
     }

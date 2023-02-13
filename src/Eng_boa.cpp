@@ -67,7 +67,7 @@ void Asseter::chat(sf::RenderWindow& window,silnik::Pozycjer& pozycja,Inicjator_
     /// Obsluga chatu --> 10 ostatnio wykonanych ruchow
     sf::Text chat;
     sf::Font fira;
-    fira.loadFromFile(MY_DEFINE "../fonts/fira.ttf");
+    fira.loadFromFile(MY_DEFINE "../font/fira.ttf");
     chat.setFont(fira);
     chat.setString("CHAT");
     chat.setCharacterSize(60 / resolution_mode);
