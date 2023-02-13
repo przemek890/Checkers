@@ -1,13 +1,16 @@
 cmake_minimum_required(VERSION 3.21)
 set(CMAKE_CXX_STANDARD 14)
-project(CHECKERS)
+
+get_filename_component(PROJECT_ROOT_DIR ${CMAKE_SOURCE_DIR} DIRECTORY)
+set(PROJECT_ROOT_DIR "CHECKERS")
+project(${PROJECT_ROOT_DIR})
 
 
 set(HEADERS_DIRECTORY "./inc")
 include_directories(${HEADERS_DIRECTORY})
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-add_executable(CHECKERS ${SOURCES})
+add_executable(${PROJECT_ROOT_DIR} ${SOURCES})
 
 set(SFML_DIR ./SFML-2.5.1/lib/cmake/SFML)
 
@@ -23,4 +26,4 @@ elseif(WIN32)
 endif()
 ######################################################
 find_package(SFML COMPONENTS graphics REQUIRED)
-target_link_libraries(CHECKERS sfml-graphics)
+target_link_libraries(${PROJECT_ROOT_DIR} sfml-graphics)
