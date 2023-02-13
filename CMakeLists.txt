@@ -1,20 +1,24 @@
 cmake_minimum_required(VERSION 3.21)
 set(CMAKE_CXX_STANDARD 14)
-project(WARCABY)
+project(CHECKERS)
 
 
 set(HEADERS_DIRECTORY "./inc")
 include_directories(${HEADERS_DIRECTORY})
 
-add_executable(WARCABY src/Main.cpp src/m_loop.cpp src/font_menu.cpp src/pola_menu.cpp src/tekst_menu.cpp src/txt_menu.cpp src/screen.cpp src/AI_gracz.cpp src/Register.cpp inc/Eng_boa.h src/Eng_boa.cpp src/AI.cpp src/Board.cpp src/Engine.cpp src/Functions.cpp src/Game_loop.cpp)
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+add_executable(CHECKERS ${SOURCES})
 
-set(SFML_STATIC_LIBRARIES FALSE) # TRUE
+set(SFML_STATIC_LIBRARIES TRUE) # TRUE (WINDOWS)
 
 ####################################################################################################################
-set(SFML_DIR SFML/)
-find_package(SFML COMPONENTS system window graphics network audio REQUIRED)
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/SFML-2.5.1/lib/cmake/SFML")
+    message(FATAL_ERROR "Rozpakuj biblioteke: SFM-2.5.1")
+endif()
+######################################################
+set(SFML_DIR ./SFML-2.5.1/lib/cmake/SFML)
+find_package(SFML COMPONENTS graphics REQUIRED)
 
-include_directories(SFML/include)
-target_link_libraries(WARCABY sfml-system sfml-window sfml-graphics sfml-audio sfml-network)
+include_directories(./SFML-2.5.1/include)
+target_link_libraries(CHECKERS sfml-graphics)
 ####################################################################################################################
-

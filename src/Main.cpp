@@ -8,7 +8,6 @@ int main() {
 
     vector<screen*> Ss;
     int okno = 6;
-
     //generowanie okna gry
     RenderWindow wind(sf::VideoMode(2000 / resolution_mode, 1600 / resolution_mode), "Simple Checkers",5);
 

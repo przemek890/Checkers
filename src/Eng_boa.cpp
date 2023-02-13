@@ -185,6 +185,8 @@ int Asseter::exit(sf::RenderWindow& window) {
     int yy = (sf::Mouse::getPosition(window).y);
 
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && (x <= xx && x + x1 >= xx) && (y <= yy && y + y1 >= yy)) {
+        User user;
+        user.Punkty(0);
         return -777;
     }
     else return 1000;
