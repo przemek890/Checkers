@@ -11,14 +11,18 @@ add_executable(CHECKERS ${SOURCES})
 
 set(SFML_STATIC_LIBRARIES TRUE) # TRUE (WINDOWS)
 
-####################################################################################################################
-if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/SFML-2.5.1/lib/cmake/SFML")
-    message(FATAL_ERROR "Rozpakuj biblioteke: SFM-2.5.1")
+#######################################################
+if(APPLE)
+    set(SFML_STATIC_LIBRARIES FALSE)
+elseif(WIN32)
+    set(SFML_STATIC_LIBRARIES TRUE)
+    if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/SFML-2.5.1/lib/cmake/SFML")
+        message(FATAL_ERROR "Rozpakuj biblioteke: SFM-2.5.1")
+        set(SFML_DIR ./SFML-2.5.1/lib/cmake/SFML)
+        include_directories(./SFML-2.5.1/include)
+
+    endif()
 endif()
 ######################################################
-set(SFML_DIR ./SFML-2.5.1/lib/cmake/SFML)
 find_package(SFML COMPONENTS graphics REQUIRED)
-
-include_directories(./SFML-2.5.1/include)
 target_link_libraries(CHECKERS sfml-graphics)
-####################################################################################################################
