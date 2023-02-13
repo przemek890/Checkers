@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.21)
 set(CMAKE_CXX_STANDARD 14)
 
 if(APPLE)
-    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/..//bin)
+    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/../bin)
     add_definitions(-DMY_DEFINE="${CMAKE_SOURCE_DIR}/bin/")
 elseif(WIN32)
-    set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR}/../bin)
+    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/../bin)
     add_definitions(-DMY_DEFINE="${CMAKE_SOURCE_DIR}/bin/")
 endif()
 
