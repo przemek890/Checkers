@@ -94,3 +94,5 @@ public:
     a5();
     int Run(RenderWindow &Wind);
 };
+
+void pom_f(string &x,string &y,string &z,string &x1,string &y1,string &z1,int &pom,vector<string> &a);

@@ -1151,7 +1151,7 @@ int a1::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/fira.ttf");
+    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1162,116 +1162,39 @@ int a1::Run(sf::RenderWindow &Wind) {
     string x,y,z,x1,y1,z1;
     vector<string> a = Display_File("../txt/a1.txt");
     int n=a.size();
-    if(a.size()<=20)
-    for(int i =0;i<a.size();i++) {
-        pom=i;
-        x += a[i];
-        if(pom%2==1)x+='\n';
-        if(pom%2==0)x+="    ";
-    }
-    else{
-        for(int i =0;i<20;i++) {
-            pom=i;
-            x += a[i];
-            if(pom%2==1)x+='\n';
-            if(pom%2==0)x+="    ";
-        }
-
-        if(a.size()<=40)
-        for(int k =20;k<a.size();k++) {
-            pom=k;
-            y += a[k];
-            if(pom%2==1)y+='\n';
-            if(pom%2==0)y+="    ";
-        }
-        else{
-            for(int k =20;k<40;k++) {
-                pom=k;
-                y += a[k];
-                if(pom%2==1)y+='\n';
-                if(pom%2==0)y+="    ";
-            }
-
-            if(a.size()<=60)
-                for(int k =40;k<a.size();k++) {
-                pom=k;
-                z += a[k];
-                if(pom%2==1)z+='\n';
-                if(pom%2==0)z+="    ";
-            }
-            else{
-                for(int k =40;k<60;k++) {
-                    pom=k;
-                    z += a[k];
-                    if(pom%2==1)z+='\n';
-                    if(pom%2==0)z+="    ";
-
-                }
-                if(a.size()<=80)
-                    for(int k =60;k<a.size();k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                else{
-                    for(int k =60;k<80;k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                    if(a.size()<=100)
-                        for(int k =80;k<a.size();k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                    else{
-                        for(int k =80;k<100;k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                        if(a.size()<=120)
-                            for(int k =100;k<a.size();k++) {
-                                pom=k;
-                                z1 += a[k];
-                                if(pom%2==1)z1+='\n';
-                                if(pom%2==0)z1+="    ";
-                            }
-                    }
-                }
-            }
-        }
-    }
+    pom_f(x,y,z,x1,y1,z1,pom,a);
+    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
-    ruch1.setCharacterSize(35);
+    ruch1.setFont(ff);
+    ruch1.setCharacterSize(30);
     ruch1.setString(x);
-    ruch1.setPosition(100 / resolution_mode,150 / resolution_mode);
+    ruch1.setPosition(120 / resolution_mode,150 / resolution_mode);
     sf::Text ruch2 = tekstmenu1.g_text_pve();
-    ruch2.setCharacterSize(35);
+    ruch2.setFont(ff);
+    ruch2.setCharacterSize(30);
     ruch2.setString(y);
-    ruch2.setPosition(100 / resolution_mode,700 / resolution_mode);
+    ruch2.setPosition(120 / resolution_mode,700 / resolution_mode);
     sf::Text ruch3 = tekstmenu1.g_text_pve();
-    ruch3.setCharacterSize(35);
+    ruch3.setFont(ff);
+    ruch3.setCharacterSize(30);
     ruch3.setString(z);
-    ruch3.setPosition(720/ resolution_mode,150 / resolution_mode);
+    ruch3.setPosition(740/ resolution_mode,150 / resolution_mode);
     sf::Text ruch4 = tekstmenu1.g_text_pve();
-    ruch4.setCharacterSize(35);
+    ruch4.setFont(ff);
+    ruch4.setCharacterSize(30);
     ruch4.setString(x1);
-    ruch4.setPosition(720/ resolution_mode,700 / resolution_mode);
+    ruch4.setPosition(740/ resolution_mode,700 / resolution_mode);
     sf::Text ruch5 = tekstmenu1.g_text_pve();
-    ruch5.setCharacterSize(35);
+    ruch5.setFont(ff);
+    ruch5.setCharacterSize(30);
     ruch5.setString(y1);
-    ruch5.setPosition(1250 / resolution_mode,150 / resolution_mode);
+    ruch5.setPosition(1360 / resolution_mode,150 / resolution_mode);
     sf::Text ruch6 = tekstmenu1.g_text_pve();
-    ruch6.setCharacterSize(35);
+    ruch6.setFont(ff);
+    ruch6.setCharacterSize(30);
     ruch6.setString(z1);
-    ruch6.setPosition(1250  / resolution_mode,700 / resolution_mode);
+    ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
     Event event;
 
@@ -1327,7 +1250,7 @@ int a2::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/fira.ttf");
+    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1338,116 +1261,39 @@ int a2::Run(sf::RenderWindow &Wind) {
     string x,y,z,x1,y1,z1;
     vector<string> a = Display_File("../txt/a2.txt");
     int n=a.size();
-    if(a.size()<=20)
-        for(int i =0;i<a.size();i++) {
-            pom=i;
-            x += a[i];
-            if(pom%2==1)x+='\n';
-            if(pom%2==0)x+="    ";
-        }
-    else{
-        for(int i =0;i<20;i++) {
-            pom=i;
-            x += a[i];
-            if(pom%2==1)x+='\n';
-            if(pom%2==0)x+="    ";
-        }
-
-        if(a.size()<=40)
-            for(int k =20;k<a.size();k++) {
-                pom=k;
-                y += a[k];
-                if(pom%2==1)y+='\n';
-                if(pom%2==0)y+="    ";
-            }
-        else{
-            for(int k =20;k<40;k++) {
-                pom=k;
-                y += a[k];
-                if(pom%2==1)y+='\n';
-                if(pom%2==0)y+="    ";
-            }
-
-            if(a.size()<=60)
-                for(int k =40;k<a.size();k++) {
-                    pom=k;
-                    z += a[k];
-                    if(pom%2==1)z+='\n';
-                    if(pom%2==0)z+="    ";
-                }
-            else{
-                for(int k =40;k<60;k++) {
-                    pom=k;
-                    z += a[k];
-                    if(pom%2==1)z+='\n';
-                    if(pom%2==0)z+="    ";
-
-                }
-                if(a.size()<=80)
-                    for(int k =60;k<a.size();k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                else{
-                    for(int k =60;k<80;k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                    if(a.size()<=100)
-                        for(int k =80;k<a.size();k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                    else{
-                        for(int k =80;k<100;k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                        if(a.size()<=120)
-                            for(int k =100;k<a.size();k++) {
-                                pom=k;
-                                z1 += a[k];
-                                if(pom%2==1)z1+='\n';
-                                if(pom%2==0)z1+="    ";
-                            }
-                    }
-                }
-            }
-        }
-    }
+    pom_f(x,y,z,x1,y1,z1,pom,a);
+    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
-    ruch1.setCharacterSize(35);
+    ruch1.setFont(ff);
+    ruch1.setCharacterSize(30);
     ruch1.setString(x);
-    ruch1.setPosition(100 / resolution_mode,150 / resolution_mode);
+    ruch1.setPosition(120 / resolution_mode,150 / resolution_mode);
     sf::Text ruch2 = tekstmenu1.g_text_pve();
-    ruch2.setCharacterSize(35);
+    ruch2.setFont(ff);
+    ruch2.setCharacterSize(30);
     ruch2.setString(y);
-    ruch2.setPosition(100 / resolution_mode,700 / resolution_mode);
+    ruch2.setPosition(120 / resolution_mode,700 / resolution_mode);
     sf::Text ruch3 = tekstmenu1.g_text_pve();
-    ruch3.setCharacterSize(35);
+    ruch3.setFont(ff);
+    ruch3.setCharacterSize(30);
     ruch3.setString(z);
-    ruch3.setPosition(720 / resolution_mode,150 / resolution_mode);
+    ruch3.setPosition(740 / resolution_mode,150 / resolution_mode);
     sf::Text ruch4 = tekstmenu1.g_text_pve();
-    ruch4.setCharacterSize(35);
+    ruch4.setFont(ff);
+    ruch4.setCharacterSize(30);
     ruch4.setString(x1);
-    ruch4.setPosition(720 / resolution_mode,700 / resolution_mode);
+    ruch4.setPosition(740 / resolution_mode,700 / resolution_mode);
     sf::Text ruch5 = tekstmenu1.g_text_pve();
-    ruch5.setCharacterSize(35);
+    ruch5.setFont(ff);
+    ruch5.setCharacterSize(30);
     ruch5.setString(y1);
-    ruch5.setPosition(1250 / resolution_mode,150 / resolution_mode);
+    ruch5.setPosition(1360 / resolution_mode,150 / resolution_mode);
     sf::Text ruch6 = tekstmenu1.g_text_pve();
-    ruch6.setCharacterSize(35);
+    ruch6.setFont(ff);
+    ruch6.setCharacterSize(30);
     ruch6.setString(z1);
-    ruch6.setPosition(1250  / resolution_mode,700 / resolution_mode);
+    ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
     Event event;
 
@@ -1474,12 +1320,8 @@ int a2::Run(sf::RenderWindow &Wind) {
         if(pmenu1.what_if(p3, Wind)){
             return 9;
         }
-
         Wind.display();
-
-
     }
-
 }
 
 //a3
@@ -1506,7 +1348,7 @@ int a3::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/fira.ttf");
+    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1517,116 +1359,39 @@ int a3::Run(sf::RenderWindow &Wind) {
     string x,y,z,x1,y1,z1;
     vector<string> a = Display_File("../txt/a3.txt");
     int n=a.size();
-    if(a.size()<=20)
-        for(int i =0;i<a.size();i++) {
-            pom=i;
-            x += a[i];
-            if(pom%2==1)x+='\n';
-            if(pom%2==0)x+="    ";
-        }
-    else{
-        for(int i =0;i<20;i++) {
-            pom=i;
-            x += a[i];
-            if(pom%2==1)x+='\n';
-            if(pom%2==0)x+="    ";
-        }
-
-        if(a.size()<=40)
-            for(int k =20;k<a.size();k++) {
-                pom=k;
-                y += a[k];
-                if(pom%2==1)y+='\n';
-                if(pom%2==0)y+="    ";
-            }
-        else{
-            for(int k =20;k<40;k++) {
-                pom=k;
-                y += a[k];
-                if(pom%2==1)y+='\n';
-                if(pom%2==0)y+="    ";
-            }
-
-            if(a.size()<=60)
-                for(int k =40;k<a.size();k++) {
-                    pom=k;
-                    z += a[k];
-                    if(pom%2==1)z+='\n';
-                    if(pom%2==0)z+="    ";
-                }
-            else{
-                for(int k =40;k<60;k++) {
-                    pom=k;
-                    z += a[k];
-                    if(pom%2==1)z+='\n';
-                    if(pom%2==0)z+="    ";
-
-                }
-                if(a.size()<=80)
-                    for(int k =60;k<a.size();k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                else{
-                    for(int k =60;k<80;k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                    if(a.size()<=100)
-                        for(int k =80;k<a.size();k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                    else{
-                        for(int k =80;k<100;k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                        if(a.size()<=120)
-                            for(int k =100;k<a.size();k++) {
-                                pom=k;
-                                z1 += a[k];
-                                if(pom%2==1)z1+='\n';
-                                if(pom%2==0)z1+="    ";
-                            }
-                    }
-                }
-            }
-        }
-    }
+    pom_f(x,y,z,x1,y1,z1,pom,a);
+    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
-    ruch1.setCharacterSize(35);
+    ruch1.setFont(ff);
+    ruch1.setCharacterSize(30);
     ruch1.setString(x);
-    ruch1.setPosition(100 / resolution_mode,150 / resolution_mode);
+    ruch1.setPosition(120 / resolution_mode,150 / resolution_mode);
     sf::Text ruch2 = tekstmenu1.g_text_pve();
-    ruch2.setCharacterSize(35);
+    ruch2.setFont(ff);
+    ruch2.setCharacterSize(30);
     ruch2.setString(y);
-    ruch2.setPosition(100 / resolution_mode,700 / resolution_mode);
+    ruch2.setPosition(120 / resolution_mode,700 / resolution_mode);
     sf::Text ruch3 = tekstmenu1.g_text_pve();
-    ruch3.setCharacterSize(35);
+    ruch3.setFont(ff);
+    ruch3.setCharacterSize(30);
     ruch3.setString(z);
-    ruch3.setPosition(720 / resolution_mode,150 / resolution_mode);
+    ruch3.setPosition(740 / resolution_mode,150 / resolution_mode);
     sf::Text ruch4 = tekstmenu1.g_text_pve();
-    ruch4.setCharacterSize(35);
+    ruch4.setFont(ff);
+    ruch4.setCharacterSize(30);
     ruch4.setString(x1);
-    ruch4.setPosition(720 / resolution_mode,700 / resolution_mode);
+    ruch4.setPosition(740 / resolution_mode,700 / resolution_mode);
     sf::Text ruch5 = tekstmenu1.g_text_pve();
-    ruch5.setCharacterSize(35);
+    ruch5.setFont(ff);
+    ruch5.setCharacterSize(30);
     ruch5.setString(y1);
-    ruch5.setPosition(1250 / resolution_mode,150 / resolution_mode);
+    ruch5.setPosition(1360 / resolution_mode,150 / resolution_mode);
     sf::Text ruch6 = tekstmenu1.g_text_pve();
-    ruch6.setCharacterSize(35);
+    ruch6.setFont(ff);
+    ruch6.setCharacterSize(30);
     ruch6.setString(z1);
-    ruch6.setPosition(1250  / resolution_mode,700 / resolution_mode);
+    ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
     Event event;
 
@@ -1681,7 +1446,7 @@ int a4::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/fira.ttf");
+    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
@@ -1692,116 +1457,38 @@ int a4::Run(sf::RenderWindow &Wind) {
     string x,y,z,x1,y1,z1;
     vector<string> a = Display_File("../txt/a4.txt");
     int n=a.size();
-    if(a.size()<=20)
-        for(int i =0;i<a.size();i++) {
-            pom=i;
-            x += a[i];
-            if(pom%2==1)x+='\n';
-            if(pom%2==0)x+="    ";
-        }
-    else{
-        for(int i =0;i<20;i++) {
-            pom=i;
-            x += a[i];
-            if(pom%2==1)x+='\n';
-            if(pom%2==0)x+="    ";
-        }
-
-        if(a.size()<=40)
-            for(int k =20;k<a.size();k++) {
-                pom=k;
-                y += a[k];
-                if(pom%2==1)y+='\n';
-                if(pom%2==0)y+="    ";
-            }
-        else{
-            for(int k =20;k<40;k++) {
-                pom=k;
-                y += a[k];
-                if(pom%2==1)y+='\n';
-                if(pom%2==0)y+="    ";
-            }
-
-            if(a.size()<=60)
-                for(int k =40;k<a.size();k++) {
-                    pom=k;
-                    z += a[k];
-                    if(pom%2==1)z+='\n';
-                    if(pom%2==0)z+="    ";
-                }
-            else{
-                for(int k =40;k<60;k++) {
-                    pom=k;
-                    z += a[k];
-                    if(pom%2==1)z+='\n';
-                    if(pom%2==0)z+="    ";
-
-                }
-                if(a.size()<=80)
-                    for(int k =60;k<a.size();k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                else{
-                    for(int k =60;k<80;k++) {
-                        pom=k;
-                        x1 += a[k];
-                        if(pom%2==1)x1+='\n';
-                        if(pom%2==0)x1+="    ";
-                    }
-                    if(a.size()<=100)
-                        for(int k =80;k<a.size();k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                    else{
-                        for(int k =80;k<100;k++) {
-                            pom=k;
-                            y1 += a[k];
-                            if(pom%2==1)y1+='\n';
-                            if(pom%2==0)y1+="    ";
-                        }
-                        if(a.size()<=120)
-                            for(int k =100;k<a.size();k++) {
-                                pom=k;
-                                z1 += a[k];
-                                if(pom%2==1)z1+='\n';
-                                if(pom%2==0)z1+="    ";
-                            }
-                    }
-                }
-            }
-        }
-    }
+    pom_f(x,y,z,x1,y1,z1,pom,a);
+    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
     //wyswietlanie ruchow
     sf::Text ruch1 = tekstmenu1.g_text_pve();
-    ruch1.setCharacterSize(35);
+    ruch1.setFont(ff);
+    ruch1.setCharacterSize(30);
     ruch1.setString(x);
-    ruch1.setPosition(100 / resolution_mode,150 / resolution_mode);
+    ruch1.setPosition(120 / resolution_mode,150 / resolution_mode);
     sf::Text ruch2 = tekstmenu1.g_text_pve();
-    ruch2.setCharacterSize(35);
+    ruch2.setFont(ff);
+    ruch2.setCharacterSize(30);
     ruch2.setString(y);
-    ruch2.setPosition(100 / resolution_mode,700 / resolution_mode);
+    ruch2.setPosition(120 / resolution_mode,700 / resolution_mode);
     sf::Text ruch3 = tekstmenu1.g_text_pve();
-    ruch3.setCharacterSize(35);
+    ruch3.setFont(ff);
+    ruch3.setCharacterSize(30);
     ruch3.setString(z);
-    ruch3.setPosition(720 / resolution_mode,150 / resolution_mode);
+    ruch3.setPosition(740 / resolution_mode,150 / resolution_mode);
     sf::Text ruch4 = tekstmenu1.g_text_pve();
-    ruch4.setCharacterSize(35);
+    ruch4.setCharacterSize(30);
     ruch4.setString(x1);
-    ruch4.setPosition(720 / resolution_mode,700 / resolution_mode);
+    ruch4.setPosition(740 / resolution_mode,700 / resolution_mode);
     sf::Text ruch5 = tekstmenu1.g_text_pve();
-    ruch5.setCharacterSize(35);
+    ruch5.setFont(ff);
+    ruch5.setCharacterSize(30);
     ruch5.setString(y1);
-    ruch5.setPosition(1250 / resolution_mode,150 / resolution_mode);
+    ruch5.setPosition(1360 / resolution_mode,150 / resolution_mode);
     sf::Text ruch6 = tekstmenu1.g_text_pve();
-    ruch6.setCharacterSize(35);
+    ruch6.setFont(ff);
+    ruch6.setCharacterSize(30);
     ruch6.setString(z1);
-    ruch6.setPosition(1250  / resolution_mode,700 / resolution_mode);
+    ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
     Event event;
 
@@ -1857,17 +1544,83 @@ int a5::Run(sf::RenderWindow &Wind) {
     //napisy
     font_menu ft;
     Font font1;
-    font1.loadFromFile("../fonts/fira.ttf");
+    font1.loadFromFile("../fonts/Manrope-Bold.ttf");
 
     tekst_menu tekstmenu1(font1);
     sf::Text text2 = tekstmenu1.g_text_return();
     text2.setPosition(120 / resolution_mode,1450 / resolution_mode);
 
     //wyswietl archiwum
+    ///
+
+    ///
+    vector<string> a = Display_File("../txt/a5.txt");
     int pom=0;
     string x,y,z,x1,y1,z1;
-    vector<string> a = Display_File("../txt/a5.txt");
     int n=a.size();
+    pom_f(x,y,z,x1,y1,z1,pom,a);
+    sf::Font ff; ff.loadFromFile("../fonts/fira.ttf");
+    //wyswietlanie ruchow
+    sf::Text ruch1 = tekstmenu1.g_text_pve();
+    ruch1.setFont(ff);
+    ruch1.setCharacterSize(30);
+    ruch1.setString(x);
+    ruch1.setPosition(120 / resolution_mode,150 / resolution_mode);
+    sf::Text ruch2 = tekstmenu1.g_text_pve();
+    ruch2.setFont(ff);
+    ruch2.setCharacterSize(30);
+    ruch2.setString(y);
+    ruch2.setPosition(120 / resolution_mode,700 / resolution_mode);
+    sf::Text ruch3 = tekstmenu1.g_text_pve();
+    ruch3.setFont(ff);
+    ruch3.setCharacterSize(30);
+    ruch3.setString(z);
+    ruch3.setPosition(740 / resolution_mode,150 / resolution_mode);
+    sf::Text ruch4 = tekstmenu1.g_text_pve();
+    ruch4.setFont(ff);
+    ruch4.setCharacterSize(30);
+    ruch4.setString(x1);
+    ruch4.setPosition(740 / resolution_mode,700 / resolution_mode);
+    sf::Text ruch5 = tekstmenu1.g_text_pve();
+    ruch1.setFont(ff);
+    ruch5.setCharacterSize(30);
+    ruch5.setString(y1);
+    ruch5.setPosition(1360 / resolution_mode,150 / resolution_mode);
+    sf::Text ruch6 = tekstmenu1.g_text_pve();
+    ruch1.setFont(ff);
+    ruch6.setCharacterSize(30);
+    ruch6.setString(z1);
+    ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
+
+    Event event;
+
+    while(Wind.isOpen()) {
+        Wind.clear(Color::Black);
+        Wind.pollEvent(event);
+        //txt
+        Wind.draw(menu_s);
+        Wind.draw(p3);
+
+        //napisy
+        Wind.draw(text2);
+
+        //wywietlanie archiwum
+        if(x.size()>0)Wind.draw(ruch1);
+        if(y.size()>0) Wind.draw(ruch2);
+        if(z.size()>0) Wind.draw(ruch3);
+        if(x1.size()>0) Wind.draw(ruch4);
+        if(y1.size()>0) Wind.draw(ruch5);
+        if(z1.size()>0) Wind.draw(ruch6);
+
+        //interakcje
+        if(pmenu1.what_if(p3, Wind)){
+            return 9;
+        }
+        Wind.display();
+    }
+}
+///-----------------------------------
+void pom_f(string &x,string &y,string &z,string &x1,string &y1,string &z1,int &pom,vector<string> &a) {
     if(a.size()<=20)
         for(int i =0;i<a.size();i++) {
             pom=i;
@@ -1948,68 +1701,17 @@ int a5::Run(sf::RenderWindow &Wind) {
                                 if(pom%2==1)z1+='\n';
                                 if(pom%2==0)z1+="    ";
                             }
+                        else {
+                            for (int k = 100; k < 120; k++) {
+                                pom = k;
+                                z1 += a[k];
+                                if (pom % 2 == 1)z1 += '\n';
+                                if (pom % 2 == 0)z1 += "    ";
+                            }
+                        }
                     }
                 }
             }
         }
     }
-    //wyswietlanie ruchow
-    sf::Text ruch1 = tekstmenu1.g_text_pve();
-    ruch1.setCharacterSize(35);
-    ruch1.setString(x);
-    ruch1.setPosition(100 / resolution_mode,150 / resolution_mode);
-    sf::Text ruch2 = tekstmenu1.g_text_pve();
-    ruch2.setCharacterSize(35);
-    ruch2.setString(y);
-    ruch2.setPosition(100 / resolution_mode,700 / resolution_mode);
-    sf::Text ruch3 = tekstmenu1.g_text_pve();
-    ruch3.setCharacterSize(35);
-    ruch3.setString(z);
-    ruch3.setPosition(720 / resolution_mode,150 / resolution_mode);
-    sf::Text ruch4 = tekstmenu1.g_text_pve();
-    ruch4.setCharacterSize(35);
-    ruch4.setString(x1);
-    ruch4.setPosition(720 / resolution_mode,700 / resolution_mode);
-    sf::Text ruch5 = tekstmenu1.g_text_pve();
-    ruch5.setCharacterSize(35);
-    ruch5.setString(y1);
-    ruch5.setPosition(1250 / resolution_mode,150 / resolution_mode);
-    sf::Text ruch6 = tekstmenu1.g_text_pve();
-    ruch6.setCharacterSize(35);
-    ruch6.setString(z1);
-    ruch6.setPosition(1250  / resolution_mode,700 / resolution_mode);
-
-    Event event;
-
-    while(Wind.isOpen()) {
-        Wind.clear(Color::Black);
-        Wind.pollEvent(event);
-        //txt
-        Wind.draw(menu_s);
-        Wind.draw(p3);
-
-        //napisy
-        Wind.draw(text2);
-
-        //wywietlanie archiwum
-        if(x.size()>0)Wind.draw(ruch1);
-        if(y.size()>0) Wind.draw(ruch2);
-        if(z.size()>0) Wind.draw(ruch3);
-        if(x1.size()>0) Wind.draw(ruch4);
-        if(y1.size()>0) Wind.draw(ruch5);
-        if(z1.size()>0) Wind.draw(ruch6);
-
-        //interakcje
-
-
-        if(pmenu1.what_if(p3, Wind)){
-            return 9;
-        }
-
-        Wind.display();
-
-
-    }
-
 }
-
