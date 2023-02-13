@@ -6,7 +6,7 @@ if(APPLE)
     add_definitions(-DMY_DEFINE="${CMAKE_SOURCE_DIR}/bin/")
 elseif(WIN32)
     set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR}/../bin)
-    add_definitions(-DMY_DEFINE="${CMAKE_SOURCE_DIR}/bin")
+    add_definitions(-DMY_DEFINE="${CMAKE_SOURCE_DIR}/bin/")
 endif()
 
 get_filename_component(PROJECT_ROOT_DIR ${CMAKE_SOURCE_DIR} DIRECTORY)
