@@ -36,7 +36,7 @@ bool User::logowanie(User& user,string log, string pass) {
         string filePoint = line.substr(number_start, (number_end - number_start));
         // Jeśli odczytane dane z pliku zgadzają się z podanymi przez użytkownika,
         // to zwracamy true (udane logowanie)
-        if (log == "xxx" && pass == "xxx") return false; // nie mozna zalogowac sie na puste konto - sluzy jedynie do wyswietlania wynikow
+        if (log == "<xxx>" && pass == "<xxx>") return false; // nie mozna zalogowac sie na puste konto - sluzy jedynie do wyswietlania wynikow
         else if (fileUsername == log && filePassword == pass) {
             GLOBALogin = log;
             GLOBALpassword = pass;
@@ -197,8 +197,8 @@ void User::Punkty( int wynik) {
 
 //do metody WypiszTop5
 bool compare(const User& a, const User& b) {
-    if(a.login == "xxx") return false;
-    else if (b.login == "xxx") return true;
+    if(a.login == "<xxx>") return false;
+    else if (b.login == "<xxx>") return true;
     else return a.point > b.point;
 }
 
