@@ -354,6 +354,20 @@ int opcje_loop:: Run(RenderWindow &Wind){
     int pion = OdczytKolor();
     int tryb = OdczytModel();
 
+    build.setModel(tryb);
+    if(pion==1){
+        build.setKolor(BLEACH_WHITE_LIGHT_BROWN);
+    }
+    else {
+        build.setKolor(BLACK_WHITE);
+    }
+    if(plansz == 1){
+        build.setMotyw(BLEACH_WHITE_LIGHT_BROWN);
+    }
+    else {
+        build.setMotyw(BLACK_WHITE);
+    }
+
     //okno
     Wind.setFramerateLimit(60);
 

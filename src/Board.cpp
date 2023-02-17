@@ -98,7 +98,7 @@ Builder& Builder::setKolor(Motyw _kolorPion){
     return *this;
 }
 Atrybuty Builder::build(){
-    Atrybuty* atr = new Atrybuty(_model_rozgrywki,_motyw,_kolor_pionkow);
+    Atrybuty* atr = new Atrybuty(_model_rozgrywki,_kolor_pionkow,_motyw);
     return *atr;
 }
 

@@ -32,7 +32,7 @@ private:
     short int motyw;                        // LibrariesAndVariables -> enum Motywy
     short int kolor_pionkow;                // LibrariesAndVariables -> enum Motywy
 public:
-    Atrybuty(bool model,Motyw mot,Motyw kol);
+    Atrybuty(bool model,Motyw kol,Motyw mot);
     bool getter_m_r();
     short int getter_m();
     short int getter_k_p();
