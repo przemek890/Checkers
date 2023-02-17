@@ -373,7 +373,7 @@ int opcje_loop:: Run(RenderWindow &Wind){
     p2.setTexture(pmenu1.g_p2());
     p2.setScale(1./resolution_mode,1./resolution_mode);
     p2.setPosition(1040./resolution_mode,904./resolution_mode);
-            //podswietlenia
+            //tryb_gry - podswietlenia
             pod3.setTexture(pmenu1.g_pod3());
             pod3.setScale(1./resolution_mode,1./resolution_mode);
             pod3.setPosition(1035./resolution_mode,899./resolution_mode);
@@ -510,6 +510,7 @@ int opcje_loop:: Run(RenderWindow &Wind){
         //potwierdz wybor
         if(pmenu1.what_if(p4,Wind)){
             Atrybuty atrybut= build.build();
+            return 3;
         }
 
         //powrot do menu
