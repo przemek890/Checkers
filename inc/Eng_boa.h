@@ -8,7 +8,7 @@ public:
     void drukuj_przewage(sf::RenderWindow& window,silnik::Inicjalizator_pol& engine_1,Inicjator_fontow& font);
     void kogo_tura(sf::RenderWindow& window,int& licznik);
     void chat(sf::RenderWindow& window,silnik::Pozycjer& pozycja,Inicjator_fontow& font,int& poprawnosc_ruchu,int& pozycja_licz);
-    int exit(sf::RenderWindow& window);
+    int exit(sf::RenderWindow& window,Atrybuty& atrybuty);
 
     list<silnik::Pozycjer> getter_1();
     list<int> getter_2();

@@ -122,7 +122,7 @@ int Plansza ::Run(sf::RenderWindow &Wind){
         czas_1 = czas_ucieka_player_1.odswierz_czas(Wind,fonty,twoj_czas_1,twoj_czas_2,mod_0,licznik,exit);
         czas_2 = czas_ucieka_player_2.odswierz_czas(Wind,fonty,twoj_czas_1,twoj_czas_2,mod_1,licznik,exit);
 
-        int ex = assety.exit(Wind);
+        int ex = assety.exit(Wind,at);
 
         Wind.display();
 

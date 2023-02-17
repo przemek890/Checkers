@@ -165,7 +165,7 @@ void Asseter::chat(sf::RenderWindow& window,silnik::Pozycjer& pozycja,Inicjator_
 }
 list<silnik::Pozycjer> Asseter::getter_1() {return this->lista;}
 list<int> Asseter::getter_2() {return this->lista_pom;}
-int Asseter::exit(sf::RenderWindow& window) {
+int Asseter::exit(sf::RenderWindow& window,Atrybuty& atrybuty) {
     sf::Sprite exit_button;
     sf::Texture textt;
 
@@ -186,7 +186,7 @@ int Asseter::exit(sf::RenderWindow& window) {
 
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && (x <= xx && x + x1 >= xx) && (y <= yy && y + y1 >= yy)) {
         User user;
-        user.Punkty(0);
+        if(atrybuty.getter_m_r() == 1) user.Punkty(0);
         return -777;
     }
     else return 1000;
