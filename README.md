@@ -6,3 +6,5 @@ For the correct operation of the program it is necessary:
 
 --> MacOS: download the SFML library using the command:
 "brew install sfml"
+
+[![SIMPLE CHECKERS](doc/thumbnail.png)](doc/checkers.mp4)
