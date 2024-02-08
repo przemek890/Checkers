@@ -16,16 +16,16 @@ include_directories(${HEADERS_DIRECTORY})
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 add_executable(${PROJECT_ROOT_DIR} ${SOURCES})
 
-set(SFML_DIR ./SFML-2.5.1/lib/cmake/SFML)
+set(SFML_DIR ./SFML-2.6.1/lib/cmake/SFML)
 
 #######################################################
 if(APPLE)
     set(SFML_STATIC_LIBRARIES FALSE)
 elseif(WIN32)
     set(SFML_STATIC_LIBRARIES TRUE)
-    if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/SFML-2.5.1/lib/cmake/SFML")
-        message(FATAL_ERROR "Rozpakuj biblioteke: SFM-2.5.1")
-        include_directories(./SFML-2.5.1/include)
+    if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/SFML-2.6.1/lib/cmake/SFML")
+        message(FATAL_ERROR "Rozpakuj biblioteke: SFM-2.6.1")
+        include_directories(./SFML-2.6.1/include)
     endif()
 endif()
 ######################################################
