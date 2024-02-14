@@ -1,5 +1,8 @@
 #include "Engine.h"
 #include "Register.h"
+extern unsigned int SCR_W;
+extern unsigned int SCR_H;
+extern double resolution_mode;
 /// ---> silnik::Pozycjer:
 int silnik::Pozycjer::getter_x1() {return this->x1;}
 int silnik::Pozycjer::getter_x2() {return this->x2;}
@@ -413,7 +416,7 @@ int silnik::Zakonczer_rozgrywki::sprawdz_czy_koniec(Inicjalizator_pol& engine_1,
         if(zakleszczenie_1 == 0 || czas_1 == 0) // wygral gracz 2
             text.loadFromFile(MY_DEFINE "../data/win/win_2.png");
         else if (remis == 0)    // remis (15 ruchow bez bicia)
-            text.loadFromFile(MY_DEFINE "../data/win/remis.png");
+            text.loadFromFile(MY_DEFINE "../data/win/draw.png");
         else // wygral gracz 1
             text.loadFromFile(MY_DEFINE "../data/win/win_1.png");
 
@@ -423,7 +426,7 @@ int silnik::Zakonczer_rozgrywki::sprawdz_czy_koniec(Inicjalizator_pol& engine_1,
         int y = window.getView().getCenter().y;
 
         pole_wynikowe.setPosition(x - ((440 + 300) / resolution_mode) ,y - (226 / resolution_mode));
-        if(resolution_mode == 2) pole_wynikowe.setScale(0.5,0.5);
+        if(resolution_mode != 1) pole_wynikowe.setScale(1./resolution_mode,1./resolution_mode);
         window.draw(pole_wynikowe); // wyswietl komunikat o wygranej
         if(licznik_zakonczenia++ >= 100) {
             User user;

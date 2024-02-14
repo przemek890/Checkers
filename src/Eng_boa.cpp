@@ -1,5 +1,8 @@
 #include "Eng_boa.h"
 #include "Register.h"
+extern unsigned int SCR_W;
+extern unsigned int SCR_H;
+extern double resolution_mode;
 /// ---> Asseter:
 void Asseter::drukuj_przewage(sf::RenderWindow& window,silnik::Inicjalizator_pol& engine,Inicjator_fontow& font) {
     /// Drukowanie ilosci pionkow, jaka posiada okreslony gracz (po jej sprawdzeniu)
@@ -13,7 +16,7 @@ void Asseter::drukuj_przewage(sf::RenderWindow& window,silnik::Inicjalizator_pol
     }
 
     sf::Sprite asset_1;
-    if(resolution_mode == 2) asset_1.setScale(0.5,0.5);
+    if(resolution_mode != 1) asset_1.setScale(1./resolution_mode,1./resolution_mode);
 
     sf::Texture tx;
     tx.loadFromFile(MY_DEFINE "../data/assets/asset_1.png");
@@ -52,10 +55,10 @@ void Asseter::kogo_tura(sf::RenderWindow& window,int& licznik) {
     /// Drukowanie informacji (w oknie gry) kogo obecnie jest tura
     sf::Sprite tura;
     sf::Texture textt;
-    if (licznik == 0 || licznik == 1) textt.loadFromFile(MY_DEFINE "../data/assets/tura_1.png");
-    else if (licznik == 2 || licznik == 3) textt.loadFromFile(MY_DEFINE "../data/assets/tura_2.png");
+    if (licznik == 0 || licznik == 1) textt.loadFromFile(MY_DEFINE "../data/assets/turn_1.png");
+    else if (licznik == 2 || licznik == 3) textt.loadFromFile(MY_DEFINE "../data/assets/turn_2.png");
 
-    if(resolution_mode == 2) tura.setScale(0.5,0.5);
+    if(resolution_mode != 1) tura.setScale(1./resolution_mode,1./resolution_mode);
 
     tura.setTexture(textt);
     tura.setPosition(1560 / resolution_mode,675 / resolution_mode);
@@ -171,7 +174,7 @@ int Asseter::exit(sf::RenderWindow& window,Atrybuty& atrybuty) {
 
     textt.loadFromFile(MY_DEFINE "../data/assets/exit.png");
     exit_button.setTexture(textt);
-    if(resolution_mode == 2) exit_button.setScale(0.5,0.5);
+    if(resolution_mode != 1) exit_button.setScale(1./resolution_mode,1./resolution_mode);
     int x = 1590 / resolution_mode;
     int y = 1470 / resolution_mode;
     exit_button.setPosition(x, y);
@@ -202,35 +205,35 @@ void Wyswietlacz_pol::wyswietl_pola(silnik::Inicjalizator_pol& engine, Inicjaliz
                 sf::Sprite sprite_pom;
                 sprite_pom.setTexture(textury.getter_p_1());
                 sprite_pom.setPosition(175 / resolution_mode * j,175 / resolution_mode * (i));
-                if(resolution_mode == 2) sprite_pom.setScale(0.5,0.5);
+                if(resolution_mode != 1) sprite_pom.setScale(1./resolution_mode,1./resolution_mode);
                 window.draw(sprite_pom);
             }
             if(engine.getter_plansza()[i][j] == 88 ) {
                 sf::Sprite sprite_pom;
                 sprite_pom.setTexture(textury.getter_q_1());
                 sprite_pom.setPosition(175 / resolution_mode * j,175 / resolution_mode * (i));
-                if(resolution_mode == 2) sprite_pom.setScale(0.5,0.5);
+                if(resolution_mode != 1) sprite_pom.setScale(1./resolution_mode,1./resolution_mode);
                 window.draw(sprite_pom);
             }
             if(engine.getter_plansza()[i][j] == 111 ) {
                 sf::Sprite sprite_pom;
                 sprite_pom.setTexture(textury.getter_p_2());
                 sprite_pom.setPosition(175 / resolution_mode * j,175 / resolution_mode * (i ));
-                if(resolution_mode == 2) sprite_pom.setScale(0.5,0.5);
+                if(resolution_mode != 1) sprite_pom.setScale(1./resolution_mode,1./resolution_mode);
                 window.draw(sprite_pom);
             }
             if(engine.getter_plansza()[i][j] == 79 ) {
                 sf::Sprite sprite_pom;
                 sprite_pom.setTexture(textury.getter_q_2());
                 sprite_pom.setPosition(175 / resolution_mode * j,175 / resolution_mode * (i));
-                if(resolution_mode == 2) sprite_pom.setScale(0.5,0.5);
+                if(resolution_mode != 1) sprite_pom.setScale(1./resolution_mode,1./resolution_mode);
                 window.draw(sprite_pom);
             }
             if(engine.getter_plansza()[i][j] == 0 ) {
                 sf::Sprite sprite_pom;
                 sprite_pom.setTexture(textury.getter_p_p());
                 sprite_pom.setPosition(175 / resolution_mode * j,175 / resolution_mode * (i));
-                if(resolution_mode == 2) sprite_pom.setScale(0.5,0.5);
+                if(resolution_mode != 1) sprite_pom.setScale(0.5,0.5);
                 window.draw(sprite_pom);
             }
         }
@@ -244,7 +247,7 @@ void Wyswietlacz_pol::wyswietl_pola(silnik::Inicjalizator_pol& engine, Inicjaliz
         if (licznik == 0 || licznik == 2) sprite_pom.setTexture(textury.getter_p_p()); // zgaś pole
         else if (licznik == 1 || licznik == 3) sprite_pom.setTexture(textury.getter_p()); // zgaś podswietl pole
 
-        if(resolution_mode == 2) sprite_pom.setScale(0.5,0.5);
+        if(resolution_mode != 1) sprite_pom.setScale(1./resolution_mode,1./resolution_mode);
         window.draw(sprite_pom);
     }
 
@@ -254,11 +257,11 @@ void Wyswietlacz_pol::wyswietl_tlo(sf::RenderWindow &window) {
     /// Drukowanie na ekranie tła
     //------------------------------------------------------
     sf::Texture tlo;
-    tlo.loadFromFile(MY_DEFINE "../data/tlo.png");
+    tlo.loadFromFile(MY_DEFINE "../data/background.png");
     sf::Sprite tloo;
     tloo.setTexture(tlo);
 
-    if(resolution_mode == 2) tloo.setScale(0.5,0.5);
+    if(resolution_mode != 1) tloo.setScale(1./resolution_mode,1./resolution_mode);
     window.draw(tloo);
     //------------------------------------------------------
 }

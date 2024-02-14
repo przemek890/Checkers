@@ -2,14 +2,14 @@
 #include "LibrariesAndVariables.hpp"
 
 pola_menu::pola_menu() {
-    this->p1.loadFromFile(MY_DEFINE "../data/mp.as/przycisk1.png");
-    this->p2.loadFromFile(MY_DEFINE "../data/mp.as/pionki.png");
+    this->p1.loadFromFile(MY_DEFINE "../data/mp.as/lg3.png");
+    this->p2.loadFromFile(MY_DEFINE "../data/mp.as/lg2.png");
     this->lgw.loadFromFile(MY_DEFINE "../data/mp.as/lgw.png");
     this->lg.loadFromFile(MY_DEFINE "../data/mp.as/lg1.png");
 
     this->pionl.loadFromFile(MY_DEFINE "../data/mp.as/pionl.png");
     this->pionb.loadFromFile(MY_DEFINE "../data/mp.as/pionb.png");
-    this->boardl.loadFromFile(MY_DEFINE "../data/mp.as/szachbraz.png");
+    this->boardl.loadFromFile(MY_DEFINE "../data/mp.as/szachbrown.png");
     this->boardb.loadFromFile(MY_DEFINE "../data/mp.as/szachblack.png");
 
     this->pod1.loadFromFile(MY_DEFINE "../data/mp.as/2.png");
@@ -17,9 +17,9 @@ pola_menu::pola_menu() {
     this->pod3.loadFromFile(MY_DEFINE "../data/mp.as/4.png");
 
     this->login.loadFromFile(MY_DEFINE "../data/mp.as/dop.png");
-    this->sa.loadFromFile(MY_DEFINE "../data/mp.as/sa2.png");
+    this->sa.loadFromFile(MY_DEFINE "../data/mp.as/lg5.png");
 
-    this->arch.loadFromFile(MY_DEFINE "../data/mp.as/archiwum.png");
+    this->arch.loadFromFile(MY_DEFINE "../data/mp.as/archive.png");
 }
 
 sf::Texture& pola_menu::g_p1() { return this->p1;}

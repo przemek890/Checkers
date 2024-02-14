@@ -6,18 +6,20 @@
 #include "Register.h"
 #include "font_menu.h"
 #include "Board.hpp"
-
-
+extern unsigned int SCR_W;
+extern unsigned int SCR_H;
+extern double resolution_mode;
 
 m_loop::m_loop() {}
 
+Event event;
+
 int m_loop::Run(RenderWindow &Wind) {
-    //RenderWindow menu(sf::VideoMode(2000 / resolution_mode, 1600 / resolution_mode), "Simple Checkers",5);
     Wind.setFramerateLimit(60);
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode != 1)menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     //x: 1070, y: 255
     //856, 204
@@ -63,9 +65,14 @@ int m_loop::Run(RenderWindow &Wind) {
     textlg.setPosition(1676 / resolution_mode,56 / resolution_mode);
 
 
-    Event event;
-
     while(Wind.isOpen()){
+
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
 
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
@@ -118,7 +125,7 @@ int options::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode != 1)menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p1,p2,p3;
@@ -157,10 +164,14 @@ int options::Run(sf::RenderWindow &Wind) {
     text5.setPosition(1660 / resolution_mode,54 / resolution_mode);
 
 
-
-    Event event;
-
     while(Wind.isOpen()){
+
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
 
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
@@ -216,7 +227,7 @@ int account::Run(sf::RenderWindow &Wind) {
     //tekstury
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode != 1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
 
     pola_menu pmenu1;
@@ -266,10 +277,14 @@ int account::Run(sf::RenderWindow &Wind) {
     User user;
 
 
-    Event event;
-
-
     while(Wind.isOpen()) {
+
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
 
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
@@ -374,7 +389,7 @@ int opcje_loop:: Run(RenderWindow &Wind){
     //tekstury
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode != 1)menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p1,p2,p3,p4,pion1,pion2, b1, b2;
@@ -456,9 +471,14 @@ int opcje_loop:: Run(RenderWindow &Wind){
     pve.setPosition(1100 / resolution_mode,924 / resolution_mode);
 
 
-    Event event;
-
     while(Wind.isOpen()) {
+
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
 
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
@@ -549,7 +569,7 @@ int credits::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p3;
@@ -578,9 +598,16 @@ int credits::Run(sf::RenderWindow &Wind) {
     text6.setPosition(400 / resolution_mode,640 / resolution_mode);
 
 
-    Event event;
-
     while(Wind.isOpen()) {
+
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
 
@@ -614,7 +641,7 @@ int firstscreen::Run(sf::RenderWindow &Wind) {
     //ustawianie tla
     txt_menu menu1;
     Sprite& menu_s= menu1.g_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     //ustawianie przyciskow
     pola_menu pmenu1;
@@ -670,9 +697,15 @@ int firstscreen::Run(sf::RenderWindow &Wind) {
     //poprawnosc logowania
     User user;
 
-    Event event;
-
     while(Wind.isOpen()) {
+
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
 
@@ -769,7 +802,7 @@ int new_account::Run(sf::RenderWindow &Wind) {
     //ustawianie tla
     txt_menu menu1;
     Sprite& menu_s= menu1.g_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     //ustawianie przyciskow
     pola_menu pmenu1;
@@ -819,10 +852,14 @@ int new_account::Run(sf::RenderWindow &Wind) {
     string a,b;
     int millis =500;
 
-
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
 
@@ -904,7 +941,7 @@ int ranking::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p3;
@@ -973,9 +1010,14 @@ int ranking::Run(sf::RenderWindow &Wind) {
     sf::Text pos5 = tekstmenu1.g_position(); pos5.setString("5.");
     pos5.setPosition(340 / resolution_mode,800 / resolution_mode);
 
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
         //txt
@@ -1032,7 +1074,7 @@ int arch::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p2,p3,p4,p5,p6,p7;
@@ -1083,10 +1125,15 @@ int arch::Run(sf::RenderWindow &Wind) {
     game5.setPosition(895 / resolution_mode,985 / resolution_mode);
 
 
-
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
         //txt
@@ -1154,7 +1201,7 @@ int a1::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p3;
@@ -1211,9 +1258,14 @@ int a1::Run(sf::RenderWindow &Wind) {
     ruch6.setString(z1);
     ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
         //txt
@@ -1253,7 +1305,7 @@ int a2::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p3;
@@ -1310,9 +1362,14 @@ int a2::Run(sf::RenderWindow &Wind) {
     ruch6.setString(z1);
     ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
         //txt
@@ -1351,7 +1408,7 @@ int a3::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p3;
@@ -1408,9 +1465,14 @@ int a3::Run(sf::RenderWindow &Wind) {
     ruch6.setString(z1);
     ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
         //txt
@@ -1449,7 +1511,7 @@ int a4::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p3;
@@ -1505,9 +1567,14 @@ int a4::Run(sf::RenderWindow &Wind) {
     ruch6.setString(z1);
     ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
         //txt
@@ -1547,7 +1614,7 @@ int a5::Run(sf::RenderWindow &Wind) {
 
     txt_menu menu1;
     Sprite& menu_s= menu1.g_op_tl();
-    if(resolution_mode==2)menu_s.setScale(0.5,0.5);
+    if(resolution_mode !=1 )menu_s.setScale(1./resolution_mode,1./resolution_mode);
 
     pola_menu pmenu1;
     Sprite p3;
@@ -1607,9 +1674,14 @@ int a5::Run(sf::RenderWindow &Wind) {
     ruch6.setString(z1);
     ruch6.setPosition(1360  / resolution_mode,700 / resolution_mode);
 
-    Event event;
-
     while(Wind.isOpen()) {
+        while (Wind.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                Wind.close();
+                return -1;
+            }
+        }
+
         Wind.clear(Color::Black);
         Wind.pollEvent(event);
         //txt

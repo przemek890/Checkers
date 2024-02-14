@@ -3,6 +3,9 @@
 #include "Register.h"
 #include "AI.h"
 #include "Eng_boa.h"
+extern unsigned int SCR_W;
+extern unsigned int SCR_H;
+extern double resolution_mode;
 //--------------------
 Plansza::Plansza() {}
 
@@ -64,7 +67,7 @@ int Plansza ::Run(sf::RenderWindow &Wind){
     assety.getter_1().clear();
     assety.getter_2().clear();
 
-    if(resolution_mode == 2) plansza.setScale(0.5,0.5);
+    if(resolution_mode != 1) plansza.setScale(1./resolution_mode,1./resolution_mode);
     int poprawnosc_ruchu = 1;
     int czas_1 =1, czas_2=1;
     int exit = -1;

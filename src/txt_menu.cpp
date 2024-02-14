@@ -2,8 +2,8 @@
 #include "LibrariesAndVariables.hpp"
 
 txt_menu::txt_menu(){
-    this->tl.loadFromFile(MY_DEFINE "../data/mp.as/tlo2.png");
-    this->op_tl.loadFromFile(MY_DEFINE "../data/mp.as/tlo3.png");
+    this->tl.loadFromFile(MY_DEFINE "../data/mp.as/theme_1.png");
+    this->op_tl.loadFromFile(MY_DEFINE "../data/mp.as/theme_2.png");
 }
 
 sf::Sprite& txt_menu:: g_tl(){

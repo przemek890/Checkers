@@ -1,10 +1,10 @@
 #include <fstream>
 #include "LibrariesAndVariables.hpp"
 #include "Board.hpp"
-
-// Każdą metodę umieszczamy w odpowiedniej, odrębnej sekcji!
+extern unsigned int SCR_W;
+extern unsigned int SCR_H;
+extern double resolution_mode;
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//odczyt kazdego atrybutu
 int OdczytModel() {
 
     // Otwieramy plik
@@ -119,7 +119,7 @@ Inicjator_tekstu::Inicjator_tekstu(sf::Font& font) {
     this->text.setFont(font);
     this->text.setString("Blad wczytywania tekstury");
     this->text.setCharacterSize(300);
-    if(resolution_mode == 2) this->text.setScale(0.5,0.5);
+    if(resolution_mode != 1) this->text.setScale(1./resolution_mode,1./resolution_mode);
     this->text.setFillColor(sf::Color::White);
     this->text.setStyle(sf::Text::Bold);
 }
@@ -142,8 +142,8 @@ Inicjalizator_tekstur::Inicjalizator_tekstur(Atrybuty& atrybuty,sf::Text& text,s
         window.draw(text);  // Informacja o wystąpieniu błędu
     }
 
-    this->puste_pole.loadFromFile(MY_DEFINE"../data/puste_pole.png");
-    this->podswietl.loadFromFile(MY_DEFINE"../data/podswietlenie.png");
+    this->puste_pole.loadFromFile(MY_DEFINE"../data/empty_field.png");
+    this->podswietl.loadFromFile(MY_DEFINE"../data/backlight.png");
 }
 sf::Texture& Inicjalizator_tekstur::getter_p() {return this->podswietl;}
 sf::Texture& Inicjalizator_tekstur::getter_p_1() {return this->pionek_1;}
@@ -157,11 +157,11 @@ Inicjator_planszy::Inicjator_planszy(Atrybuty& atrybuty, sf::Text& text,sf::Rend
     /// Ładowanie tekstury planszy
     switch (atrybuty.getter_m()) {
         case 0: {
-            this->plansza_tex.loadFromFile(MY_DEFINE"../data/plansza_1.png");
+            this->plansza_tex.loadFromFile(MY_DEFINE"../data/board_1.png");
             break;
         }
         case 1: {
-            this->plansza_tex.loadFromFile(MY_DEFINE"../data/plansza_2.png");
+            this->plansza_tex.loadFromFile(MY_DEFINE"../data/board_2.png");
             break;
         }
         default: {
@@ -263,9 +263,9 @@ void Reklamer::wyswietl_reklame(sf::RenderWindow& window) {
     /// ładuje reklamy do bufora i je wyswietla
     static int licznik; // jezeli licznik osiagnie okreslona wartosc --> zmiana reklamy lub wyzerowanie licznika
 
-    this->reklama_1.loadFromFile(MY_DEFINE"../data/ads/reklama_1.png");
-    this->reklama_2.loadFromFile(MY_DEFINE"../data/ads/reklama_2.png");
-    this->reklama_3.loadFromFile(MY_DEFINE"../data/ads/reklama_3.png");
+    this->reklama_1.loadFromFile(MY_DEFINE"../data/ads/ad_1.png");
+    this->reklama_2.loadFromFile(MY_DEFINE"../data/ads/ad_2.png");
+    this->reklama_3.loadFromFile(MY_DEFINE"../data/ads/ad_3.png");
     sf::Sprite sp1, sp2, sp3;
     sp1.setTexture(reklama_1);
     sp2.setTexture(reklama_2);
@@ -274,10 +274,10 @@ void Reklamer::wyswietl_reklame(sf::RenderWindow& window) {
     sp1.setPosition(0,1400 / resolution_mode);
     sp2.setPosition(0,1400 / resolution_mode);
     sp3.setPosition(0,1400 / resolution_mode);
-    if(resolution_mode == 2) {
-        sp1.setScale(0.5,0.5);
-        sp2.setScale(0.5,0.5);
-        sp3.setScale(0.5,0.5);
+    if(resolution_mode != 1) {
+        sp1.setScale(1./resolution_mode,1./resolution_mode);
+        sp2.setScale(1./resolution_mode,1./resolution_mode);
+        sp3.setScale(1./resolution_mode,1./resolution_mode);
     }
 
     if(licznik>=0 && licznik <= 200) {window.draw(sp1);licznik++;}    /// jezeli petla gry wywolala sie [0,300] razy
@@ -297,10 +297,10 @@ void Timer::inicjuj_timer(sf::RenderWindow& window) {
     this->czas_gry_h = 0;
 
     sf::Sprite zeg;
-    this->zegarek.loadFromFile(MY_DEFINE"../data/accesories/zegar.png");
+    this->zegarek.loadFromFile(MY_DEFINE"../data/accesories/clock.png");
     zeg.setTexture(zegarek);
     zeg.setPosition(1430 / resolution_mode,43 / resolution_mode);
-    if(resolution_mode == 2) zeg.setScale(0.5,0.5);
+    if(resolution_mode != 1) zeg.setScale(1./resolution_mode,1./resolution_mode);
     window.draw(zeg);
 
 }
@@ -309,7 +309,7 @@ void Timer::odswierz_zegar(sf::RenderWindow &window,Inicjator_fontow& font) {
     sf::Sprite zegar_;
     zegar_.setTexture(this->zegarek);
     zegar_.setPosition(1430 / resolution_mode,43 / resolution_mode);
-    if (resolution_mode == 2) zegar_.setScale(0.5,0.5);
+    if (resolution_mode != 1) zegar_.setScale(1./resolution_mode,1./resolution_mode);
     window.draw(zegar_);
     ///-------------------------
 

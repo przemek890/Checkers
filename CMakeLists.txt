@@ -14,7 +14,8 @@ set(HEADERS_DIRECTORY "./inc")
 include_directories(${HEADERS_DIRECTORY})
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-add_executable(${PROJECT_ROOT_DIR} ${SOURCES})
+add_executable(${PROJECT_ROOT_DIR} ${SOURCES}
+        inc/Mode.h)
 
 set(SFML_DIR ./SFML-2.6.1/lib/cmake/SFML)
 

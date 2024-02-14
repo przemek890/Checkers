@@ -2,10 +2,10 @@
 #include "screen.h"
 #include "m_loop.h"
 #include "Game_loop.h"
+#include "Mode.h"
 
 
 int main() {
-
     vector<screen*> Ss;
     int okno = 6;
     //generowanie okna gry
@@ -73,9 +73,8 @@ int main() {
 
    //zmiana okien
    while(okno>=0){
-
        okno = Ss[okno]->Run(wind);
-
    }
 
+   exit(0);
 }

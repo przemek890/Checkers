@@ -11,13 +11,8 @@
 #include <tuple>
 #include <unistd.h> 
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 using namespace std;
-//#ifdef _WIN32
-//    #define resolution_mode 2
-//#elif __APPLE__
-//    #define resolution_mode 1
-//#endif
-#define resolution_mode 2
 //---
 enum Motyw {BLACK_WHITE = 0,BLEACH_WHITE_LIGHT_BROWN = 1}; // enum z oznaczeniami danych motywow
 //----------------------------
