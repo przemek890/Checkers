@@ -7,6 +7,8 @@ For the correct operation of the program it is necessary:
 --> MacOS: download the SFML library using the command:
 "brew install sfml"
 
+![obraz](https://github.com/przemek890/Checkers/assets/116519159/361a6521-a420-453f-9527-4d1cfd887fda)
+
 ---
 
 ![Simple Checkers](doc/checkers.gif)
