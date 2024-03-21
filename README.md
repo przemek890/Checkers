@@ -13,7 +13,57 @@ For the correct operation of the program it is necessary:
 
 - See more: [Documentation](doc/Documentation.pdf) (only in Polish)
 
-![obraz](https://github.com/julia6twp/Checkers/assets/116519159/a78ca618-c255-471a-8a2a-b8f0257359e8)
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contributions (Activities)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Przemysław Janiszewski</td>
+      <td>
+        <ul>
+          <li>Game engine (gameplay according to game rules)</li>
+          <li>PvP mode</li>
+          <li>PvE mode</li>
+          <li>Textures: pawns, board, advertisements, implementation</li>
+          <li>Timer</li>
+          <li>Chat</li>
+          <li>Move marking - highlighting</li>
+          <li>Advantage indicator</li>
+          <li>Side gameplay loop</li>
+          <li>Game window handling</li>
+          <li>Time-limited game</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Julia</td>
+      <td>
+        <ul>
+          <li>Main menu, options menu, attribute change, user account management, player ranking</li>
+          <li>Login</li>
+          <li>Registration of new users, program window handling, loop handling (main and side menus)</li>
+          <li>Menu textures (main and side menus)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Jakub</td>
+      <td>
+        <ul>
+          <li>Top 5 users ranking</li>
+          <li>Registration of new players</li>
+          <li>User login to the system</li>
+          <li>Player data modification</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
