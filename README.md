@@ -7,6 +7,12 @@ For the correct operation of the program it is necessary:
 --> MacOS: download the SFML library using the command:
 "brew install sfml"
 
+---
+
+### Scope of responsibility:
+
+- See more: [Documentation](doc/Documentation.pdf) (only in Polish)
+
 ![obraz](https://github.com/julia6twp/Checkers/assets/116519159/a78ca618-c255-471a-8a2a-b8f0257359e8)
 
 ---
@@ -53,11 +59,3 @@ For the correct operation of the program it is necessary:
 > queens can capture diagonally, if the square beyond the opponent's piece is empty (the queen lands on that square after the capture). it can then make another capture if possible on any diagonal
 
 ---
-
-
-### Scope of responsibility:
--  Attributes and gameplay shown in the video above
-
-- See more: [Documentation](doc/Documentation.pdf) (only in Polish)
-
-
