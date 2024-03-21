@@ -41,7 +41,7 @@ For the correct operation of the program it is necessary:
       </td>
     </tr>
     <tr>
-      <td>Julia</td>
+      <td>Julia Kluk</td>
       <td>
         <ul>
           <li>Main menu, options menu, attribute change, user account management, player ranking</li>
@@ -52,7 +52,7 @@ For the correct operation of the program it is necessary:
       </td>
     </tr>
     <tr>
-      <td>Jakub</td>
+      <td>Jakub Kleszcz</td>
       <td>
         <ul>
           <li>Top 5 users ranking</li>
